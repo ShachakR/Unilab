@@ -8,7 +8,7 @@
             <ul class="navbar-nav">
             @if (Auth::guest())
                 <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">Log in</a>

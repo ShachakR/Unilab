@@ -19,6 +19,7 @@ class ConfirmPasswordController extends Controller
     |
     */
 
+    /** @var \Illuminate\Foundation\Auth\ConfirmsPasswords */
     use ConfirmsPasswords;
 
     /**
