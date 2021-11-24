@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark h6">
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark h5">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/') }}">UNILAB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
