@@ -1,6 +1,11 @@
 <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark h5">
     <div class="container-fluid">
+        @if (Auth::guest())
         <a class="navbar-brand" href="{{ url('/') }}">UNILAB</a>
+        @else
+        <a class="navbar-brand" href="{{ url('/home') }}">UNILAB</a>
+        @endif
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,17 +39,16 @@
                         </a>
                         <ul class="dropdown-menu navbar-dark bg-dark" role="menu">
                             <li class="nav-item"><a class="nav-link" href="">Settings</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <li>
+                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                               document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
                 @endif
