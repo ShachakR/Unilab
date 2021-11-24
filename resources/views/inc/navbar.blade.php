@@ -37,7 +37,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                               document.getElementById('logout-form').submit();">
                             Logout
                         </a>
