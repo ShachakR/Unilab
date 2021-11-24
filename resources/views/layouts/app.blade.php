@@ -33,13 +33,14 @@
         <!-- Scripts -->
         <script src="{{ asset('js/bootstrap.js') }}"> </script>
         <script src="{{ asset('js/app.js') }}"> </script>
+                <!-- Styles -->
         <link href="{{ asset('css/app.css') }}">
     </head>
     <body class="antialiased">
 
-    @section('nav')
+    <div class="nav">
     @include('inc.navbar')
-     @show
+    </div>
 
         <div class="container">
             @yield('content')
