@@ -30,7 +30,7 @@
                     @else
                     <li class="dropdown nav-item navbar-dark bg-dark">
                         <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                            {{ Auth::user()->username }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu navbar-dark bg-dark" role="menu">
                             <li class="nav-item"><a class="nav-link" href="">Settings</a></li>
