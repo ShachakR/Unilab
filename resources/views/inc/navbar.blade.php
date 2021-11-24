@@ -1,17 +1,17 @@
-<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark h6">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">UNILAB</a>
+        <a class="navbar-brand" href="{{ url('/') }}">UNILAB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="">Home</a>
-                    </li>
                     @if (Auth::guest())
                     @else
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ url('/home') }}">Home</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="">Profile</a>
                     </li>
