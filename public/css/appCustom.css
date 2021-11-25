@@ -1,0 +1,45 @@
+body {}
+
+.nav-item {
+    margin-right: 40px;
+    transition: ease-in 0.2s;
+    padding-right: 15px;
+}
+
+.nav-item:hover {
+    background-color: rgba(73, 71, 71, 0.144);
+    border-radius: 20px;
+}
+
+.nv-icon {
+    font-size: 30px !important;
+    vertical-align: bottom;
+    padding-right: 10px;
+}
+
+.nav-link {
+    color: black !important;
+    font-size: 24px;
+}
+
+.nav-link.drop-menu {
+    color: black !important;
+    font-size: 15px;
+}
+
+.nav-link.drop-menu>i {
+    font-size: 20px !important;
+    vertical-align: bottom;
+    padding-right: 10px;
+}
+
+.navbar-brand {
+    transition: ease-in 0.2s;
+    color: black !important;
+    font-size: 28px !important;
+}
+
+.navbar-brand:hover {
+    background-color: rgba(73, 71, 71, 0.144);
+    border-radius: 8px;
+}
