@@ -47,6 +47,7 @@
 }
 
 .side-nav {
+    margin-top: 30px;
     list-style: none;
     display: flex;
     flex-flow: column;
@@ -64,24 +65,32 @@
 .main-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 100px;
+    margin-top: 55px;
 }
 
 .main-container .content {
     width: 100%;
     margin-right: 10%;
+    margin-top: 30px;
     height: 3000px;
 }
 
 .main-container .side-content-left {
-    width: 40%;
+    width: 30%;
     position: relative;
     border-right: 1px solid rgba(0, 0, 0, 0.11);
 }
 
-@media (max-width: 900px) {
+.main-container .filler {
+    width: 30%;
+}
+
+@media (max-width: 910px) {
     .main-container .side-content-left {
-        width: 20%;
+        width: 15%;
+    }
+    .main-container .filler {
+        width: 5%;
     }
     .nav-item span {
         display: none;

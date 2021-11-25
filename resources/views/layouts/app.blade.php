@@ -37,7 +37,7 @@
         @include('inc.navbar')
 
         <div class="main-container">
-            <div style="width: 10%"></div>
+            <div class="filler"></div>
             @if(Auth::check())
             <div class="side-content-left">@include('inc.sidenav')</div>
             @endif
