@@ -36,9 +36,13 @@
 
         @include('inc.navbar')
 
-        <div class="container">
-            @yield('content')
+        <div class="main-container">
+            <div style="width: 10%"></div>
+            @if(Auth::check())
+            <div class="side-content-left">@include('inc.sidenav')</div>
+            @endif
+            <div class="content"> @yield('content')</div>
         </div>
-        
+
     </body>
 </html>

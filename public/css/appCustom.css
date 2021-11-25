@@ -1,37 +1,46 @@
 /* ***NAV*** */
 
+.nav-body {
+    background-color: white !important;
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .2);
+}
+
 .nav-item {
     margin-right: 40px;
     transition: ease-in 0.2s;
-    padding-right: 15px;
+    color: black;
+    font-size: 24px;
+    margin-bottom: 5px;
 }
 
 .nav-item:hover {
     background-color: rgba(73, 71, 71, 0.144);
     border-radius: 20px;
+    color: black !important;
 }
 
 .nv-icon {
     font-size: 30px !important;
     vertical-align: bottom;
-    padding-right: 10px;
 }
 
-.nav-link {
-    color: black !important;
-    font-size: 24px;
-}
-
-.nav-link.drop-menu {
+.drop-menu-item {
     color: black !important;
     font-size: 15px;
+    transition: ease-in 0.2s;
 }
 
-.nav-link.drop-menu>i {
+.drop-menu-item>i {
     /* Icons */
     font-size: 20px !important;
     vertical-align: bottom;
     padding-right: 10px;
+}
+
+.drop-menu-item:hover {
+    background-color: rgba(73, 71, 71, 0.144);
+    border-radius: 20px;
+    color: black !important;
 }
 
 .navbar-brand {
@@ -48,6 +57,62 @@
 
 /* ***NAV END*** */
 
-.container {
-    margin-top: 100px !important;
+
+/* ***SIDE-NAV END*** */
+
+.side-nav {
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    align-items: stretch;
+    gap: 40px;
 }
+
+.nav-side-item {
+    transition: ease-in 0.2s;
+    color: black;
+    font-size: 24px;
+}
+
+.nav-side-item:hover {
+    background-color: rgba(73, 71, 71, 0.144);
+    border-radius: 20px;
+    color: black !important;
+}
+
+
+/* ***SIDE-NAV END*** */
+
+
+/* ***CONTENT*** */
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.main-container .content {
+    width: 100%;
+    margin-right: 10%;
+    height: 3000px;
+}
+
+.main-container .side-content-left {
+    width: 40%;
+    position: relative;
+    border-right: 1px solid rgba(0, 0, 0, 0.11);
+}
+
+@media (max-width: 900px) {
+    .main-container .side-content-left {
+        width: 20%;
+    }
+    .nav-side-item span {
+        display: none;
+    }
+}
+
+
+/* ***CONTENT END*** */
