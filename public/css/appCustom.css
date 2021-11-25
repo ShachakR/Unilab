@@ -6,41 +6,33 @@
 }
 
 .nav-item {
-    margin-right: 40px;
     transition: ease-in 0.2s;
     color: black;
     font-size: 24px;
-    margin-bottom: 5px;
 }
 
+.nav-item-top {
+    margin-right: 40px;
+    transition: ease-in 0.2s;
+    color: black;
+    font-size: 20px;
+}
+
+.nav-item-top:hover,
 .nav-item:hover {
     background-color: rgba(73, 71, 71, 0.144);
     border-radius: 20px;
     color: black !important;
 }
 
-.nv-icon {
-    font-size: 30px !important;
+.nv-icon-36 {
+    font-size: 36px !important;
     vertical-align: bottom;
 }
 
-.drop-menu-item {
-    color: black !important;
-    font-size: 15px;
-    transition: ease-in 0.2s;
-}
-
-.drop-menu-item>i {
-    /* Icons */
-    font-size: 20px !important;
+.nv-icon-28 {
+    font-size: 28px !important;
     vertical-align: bottom;
-    padding-right: 10px;
-}
-
-.drop-menu-item:hover {
-    background-color: rgba(73, 71, 71, 0.144);
-    border-radius: 20px;
-    color: black !important;
 }
 
 .navbar-brand {
@@ -54,12 +46,6 @@
     border-radius: 8px;
 }
 
-
-/* ***NAV END*** */
-
-
-/* ***SIDE-NAV END*** */
-
 .side-nav {
     list-style: none;
     display: flex;
@@ -69,20 +55,8 @@
     gap: 40px;
 }
 
-.nav-side-item {
-    transition: ease-in 0.2s;
-    color: black;
-    font-size: 24px;
-}
 
-.nav-side-item:hover {
-    background-color: rgba(73, 71, 71, 0.144);
-    border-radius: 20px;
-    color: black !important;
-}
-
-
-/* ***SIDE-NAV END*** */
+/* ***NAV END*** */
 
 
 /* ***CONTENT*** */
@@ -109,7 +83,7 @@
     .main-container .side-content-left {
         width: 20%;
     }
-    .nav-side-item span {
+    .nav-item span {
         display: none;
     }
 }

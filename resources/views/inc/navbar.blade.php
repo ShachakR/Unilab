@@ -1,4 +1,4 @@
-<nav class="nav-body navbar fixed-top navbar-expand-sm navbar-light h4">
+<nav class="nav-body navbar fixed-top">
     <div class="container-fluid">
         <div>
             @if (Auth::guest())
@@ -8,54 +8,23 @@
             @endif
         </div>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mx-auto align-items-stretch">
-                    @if (Auth::guest())
-                    @else
-                    <li>
-                        <a class="nav-item" aria-current="page" href="{{ route('home') }}"> <i class="{{ request()->is('home') ? 'material-icons nv-icon' : 'material-icons-outlined nv-icon' }}">home</i> Home </a>
-                    </li>
-                    <li>
-                        <a class="nav-item" aria-current="page" href="{{ route('profile', Auth::user()->username ) }}"> <i class="{{ request()->is('profile', Auth::user()->username ) ? 'material-icons nv-icon' : 'material-icons-outlined nv-icon' }}">person</i> Profile </a>
-                    </li>
-                    @endif
-                </ul>
-                <ul class="navbar-nav ml-auto ">
-                    @if (Auth::guest())
-                    <li>
-                        <a class="nav-item" href="{{ route('login') }}">Log in</a>
-                    </li>
-                    <li>
-                        <a class="nav-item" href="{{ route('register') }}">Register</a>
-                    </li>
-                    @else
-                    <li>
-                        <a class="nav-item" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <i class="material-icons-outlined nv-icon">expand_more</i>
-                            {{ Auth::user()->username }} <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                            <li>
-                                <a class="drop-menu-item" href=""><i class="material-icons-outlined nv-icon">settings</i>Settings</a></li>
-                            <li>
-                                <a class="drop-menu-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                              document.getElementById('logout-form').submit();">
-                                <i class="material-icons-outlined nv-icon">logout</i>
-                                    Logout
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    @endif
-                </ul>
-            </div>
+        <div>
+                   @if (Auth::guest())
+                   <div>
+                    <a class="nav-item-top" href="{{ route('login') }}">Log in</a>
+                    <a class="nav-item-top" href="{{ route('register') }}">Register</a>
+                   </div>
+                   @else
+                   <div>
+                    <a class="nav-item-top" href="{{ route('profile', Auth::user()->username ) }}"> {{Auth::user()->username }}</a>
+                    <a class="nav-item-top" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();"><i class="material-icons-outlined nv-icon-28">logout</i>Logout </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                   </div>
+                   @endif
+        </div>
 
     </div>
 </nav>
