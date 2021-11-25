@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light h4">
+<nav class="nav-body navbar fixed-top navbar-expand-sm navbar-light bg-light h4">
     <div class="container-fluid">
         <div>
             @if (Auth::guest())
@@ -17,10 +17,10 @@
                     @if (Auth::guest())
                     @else
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{ url('/home') }}"> <i class="material-icons-outlined nv-icon">home</i> <span> Home </span> </a>
+                        <a class="nav-link" aria-current="page" href="{{ route('home') }}"> <i class="{{ request()->is('home') ? 'material-icons nv-icon' : 'material-icons-outlined nv-icon' }}">home</i> Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href=""> <i class="material-icons-outlined nv-icon">perm_identity</i> <span> Profile </span></a>
+                        <a class="nav-link" aria-current="page" href="{{ route('profile', Auth::user()->username ) }}"> <i class="{{ request()->is('profile', Auth::user()->username ) ? 'material-icons nv-icon' : 'material-icons-outlined nv-icon' }}">person</i> Profile </a>
                     </li>
                     @endif
                 </ul>
