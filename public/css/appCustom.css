@@ -2,20 +2,27 @@
 
 .nav-body {
     background-color: white !important;
-    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+    min-width: 320px
 }
 
 .nav-item {
+    padding: 12px;
     transition: ease-in 0.2s;
     color: black;
     font-size: 24px;
 }
 
+.nav-item .active {
+    font-weight: bold;
+}
+
 .nav-item-top {
+    padding: 10px;
     margin-right: 40px;
     transition: ease-in 0.2s;
     color: black;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .nav-item-top:hover,
@@ -41,19 +48,15 @@
     font-size: 28px !important;
 }
 
-.navbar-brand:hover {
-    background-color: rgba(73, 71, 71, 0.144);
-    border-radius: 8px;
-}
-
 .side-nav {
+    margin-right: 10px;
     margin-top: 30px;
     list-style: none;
     display: flex;
     flex-flow: column;
     position: fixed;
     align-items: stretch;
-    gap: 40px;
+    gap: 30px;
 }
 
 
@@ -79,6 +82,7 @@
     width: 30%;
     position: relative;
     border-right: 1px solid rgba(0, 0, 0, 0.11);
+    min-width: 70px;
 }
 
 .main-container .filler {
@@ -87,13 +91,22 @@
 
 @media (max-width: 910px) {
     .main-container .side-content-left {
-        width: 15%;
+        width: 16%;
     }
     .main-container .filler {
-        width: 4%;
+        width: 3%;
     }
     .nav-item span {
         display: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .nav-item-top {
+        margin-right: 10px;
+    }
+    .navbar-brand {
+        font-size: 18px !important;
     }
 }
 
