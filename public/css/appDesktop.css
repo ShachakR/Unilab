@@ -3,7 +3,8 @@
 .nav-body {
     background-color: white !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.11);
-    min-width: 320px
+    min-width: 320px;
+    height: 65px;
 }
 
 .nav-item {
@@ -11,6 +12,7 @@
     transition: ease-in 0.2s;
     color: black;
     font-size: 24px;
+    width: max-content;
 }
 
 .nav-item .active {
@@ -50,13 +52,11 @@
 }
 
 .side-nav {
-    border-right: 1px solid rgba(0, 0, 0, 0.05);
     margin-right: 10px;
     margin-top: 30px;
     list-style: none;
     display: flex;
     flex-flow: column;
-    position: fixed;
     align-items: stretch;
     gap: 30px;
 }
@@ -69,45 +69,31 @@
 
 .main-container {
     display: flex;
-    justify-content: space-between;
     margin-top: 55px;
+    height: calc(100vh - 65px);
+    overflow-y: hidden;
 }
 
 .main-container .content {
-    width: 100%;
-    margin-right: 10%;
+    width: 80%;
     margin-top: 30px;
-    height: 3000px;
+    overflow-y: auto;
 }
 
-.main-container .side-content-left {
-    width: 30%;
-    position: relative;
-    min-width: 70px;
+.side-content-left {
+    overflow-y: auto;
 }
 
 .main-container .filler {
-    width: 30%;
+    width: 20%;
 }
 
 @media (max-width: 910px) {
-    .main-container .side-content-left {
-        width: 16%;
-    }
     .main-container .filler {
         width: 3%;
     }
     .nav-item span {
         display: none;
-    }
-}
-
-@media (max-width: 320px) {
-    .nav-item-top {
-        margin-right: 10px;
-    }
-    .navbar-brand {
-        font-size: 18px !important;
     }
 }
 
