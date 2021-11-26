@@ -52,13 +52,12 @@
 }
 
 .side-nav {
-    margin-right: 10px;
-    margin-top: 30px;
-    list-style: none;
     display: flex;
     flex-flow: column;
     align-items: stretch;
     gap: 30px;
+    width: max-content;
+    overflow-y: auto;
 }
 
 
@@ -80,12 +79,13 @@
     overflow-y: auto;
 }
 
-.side-content-left {
-    overflow-y: auto;
-}
-
 .main-container .filler {
     width: 20%;
+}
+
+.side-content-left {
+    margin-right: 10px;
+    margin-top: 30px;
 }
 
 @media (max-width: 910px) {
