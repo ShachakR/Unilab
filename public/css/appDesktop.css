@@ -23,12 +23,13 @@
     transition: ease-in 0.2s;
     color: black;
     font-size: 18px;
+    background-color: white !important;
 }
 
 .nav-item-top:hover,
 .nav-item:hover {
-    background-color: rgba(73, 71, 71, 0.144);
-    border-radius: 20px;
+    background-color: rgba(73, 71, 71, 0.144) !important;
+    border-radius: 20px !important;
     color: black !important;
 }
 
@@ -37,8 +38,8 @@
     vertical-align: bottom;
 }
 
-.nv-icon-28 {
-    font-size: 28px !important;
+.nv-icon-24 {
+    font-size: 24px !important;
     vertical-align: bottom;
 }
 
@@ -49,6 +50,7 @@
 }
 
 .side-nav {
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
     margin-right: 10px;
     margin-top: 30px;
     list-style: none;
@@ -81,7 +83,6 @@
 .main-container .side-content-left {
     width: 30%;
     position: relative;
-    border-right: 1px solid rgba(0, 0, 0, 0.11);
     min-width: 70px;
 }
 
