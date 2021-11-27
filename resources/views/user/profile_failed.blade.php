@@ -13,11 +13,8 @@
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX/AAAZ4gk3AAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC"
                         alt="">
                     <div class="card-body text-center">
-                        @if( Auth::user()->username == $username)
-                        @include('inc.user.profile.edit')
-                        @endif
                         <h5 class="card-title mt-3">{{$username}}</h5>
-                        <p class="card-text">Some description</p>
+                        <p class="card-text fw-bold fs-4">This user does not exists</p>
                     </div>
                 </div>
             </div>

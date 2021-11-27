@@ -1,11 +1,7 @@
 <nav class="nav-body navbar fixed-top">
     <div class="container-fluid">
         <div class="ml-4">
-            @if (Auth::guest())
             <a class="navbar-brand" style="font-family: 'Crete Round', serif" href="{{ url('/') }}">UNILAB</a>
-            @else
-            <a class="navbar-brand" style="font-family: 'Crete Round', serif" href="{{ url('/home') }}">UNILAB</a>
-            @endif
         </div>
 
         <div>
@@ -25,6 +21,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
+                        <a class="dropdown-item" href=""> <i class="material-icons-outlined nv-icon-22">settings</i> <span class="ml-3">Settings</span></a>
                     </div>             
                 </div>
             @endif

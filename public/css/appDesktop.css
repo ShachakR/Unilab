@@ -16,10 +16,6 @@
     border-radius: 20px;
 }
 
-.nav-item .active {
-    font-weight: bold;
-}
-
 .nav-item-top {
     padding: 10px;
     margin-right: 40px;
