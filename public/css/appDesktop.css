@@ -59,6 +59,7 @@
     gap: 30px;
     width: max-content;
     overflow-y: auto;
+    margin-right: 50px;
 }
 
 
@@ -84,6 +85,10 @@
     width: 15%;
 }
 
+.main-container .filler-left.extra {
+    width: 35%;
+}
+
 .main-container .filler-right {
     width: 40%;
 }
@@ -93,13 +98,26 @@
     margin-top: 30px;
 }
 
-@media (max-width: 910px) {
+@media (max-width: 950px) {
+    .main-container .filler-left.extra,
     .main-container .filler-right,
     .main-container .filler-left {
         width: 3%;
     }
     .nav-item span {
         display: none;
+    }
+    .side-nav {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 1300px) {
+    .main-container .filler-left.extra {
+        width: 10%;
+    }
+    .main-container .filler-right {
+        width: 10%;
     }
 }
 

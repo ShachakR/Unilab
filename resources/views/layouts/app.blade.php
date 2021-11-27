@@ -47,6 +47,8 @@
             @if(Auth::check())
             <div class="filler-left"></div>
             <div class="side-content-left">@include('inc.sidenav')</div>
+            @else
+            <div class="filler-left extra"></div>
             @endif
             <div class="content"> @yield('content')</div>
             <div class="filler-right"></div>
