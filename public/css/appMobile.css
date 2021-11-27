@@ -12,6 +12,8 @@
     transition: ease-in 0.2s;
     color: black;
     font-size: 24px;
+    border-radius: 20px;
+    width: max-content;
 }
 
 .nav-item span {
@@ -29,6 +31,7 @@
     color: black;
     font-size: 18px;
     background-color: white;
+    border-radius: 20px;
 }
 
 .nav-item-top:hover,
