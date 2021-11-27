@@ -45,10 +45,11 @@
 
         <div class="main-container">
             @if(Auth::check())
-            <div class="filler"></div>
+            <div class="filler-left"></div>
             <div class="side-content-left">@include('inc.sidenav')</div>
             @endif
             <div class="content"> @yield('content')</div>
+            <div class="filler-right"></div>
         </div>
 
     </body>

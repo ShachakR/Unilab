@@ -1,6 +1,6 @@
 <nav class="nav-body navbar fixed-top">
     <div class="container-fluid">
-        <div>
+        <div class="ml-4">
             @if (Auth::guest())
             <a class="navbar-brand" href="{{ url('/') }}">UNILAB</a>
             @else
@@ -21,7 +21,7 @@
                       </button>   
                       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();"><i class="material-icons-outlined nv-icon-24">logout</i>Logout </a>
+                        document.getElementById('logout-form').submit();"><i class="material-icons-outlined nv-icon-22">logout</i> <span class="ml-3">Logout </span></a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>

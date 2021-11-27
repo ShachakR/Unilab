@@ -13,6 +13,7 @@
     color: black;
     font-size: 24px;
     width: max-content;
+    border-radius: 20px;
 }
 
 .nav-item .active {
@@ -25,14 +26,14 @@
     transition: ease-in 0.2s;
     color: black;
     font-size: 18px;
-    background-color: white !important;
+    background-color: white;
+    border-radius: 20px;
 }
 
 .nav-item-top:hover,
 .nav-item:hover {
     background-color: rgba(73, 71, 71, 0.144) !important;
-    border-radius: 20px !important;
-    color: black !important;
+    color: black;
 }
 
 .nv-icon-36 {
@@ -40,8 +41,8 @@
     vertical-align: bottom;
 }
 
-.nv-icon-24 {
-    font-size: 24px !important;
+.nv-icon-22 {
+    font-size: 22px !important;
     vertical-align: bottom;
 }
 
@@ -79,8 +80,12 @@
     overflow-y: auto;
 }
 
-.main-container .filler {
-    width: 20%;
+.main-container .filler-left {
+    width: 15%;
+}
+
+.main-container .filler-right {
+    width: 40%;
 }
 
 .side-content-left {
@@ -89,7 +94,8 @@
 }
 
 @media (max-width: 910px) {
-    .main-container .filler {
+    .main-container .filler-right,
+    .main-container .filler-left {
         width: 3%;
     }
     .nav-item span {

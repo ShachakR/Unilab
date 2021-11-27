@@ -28,13 +28,12 @@
     transition: ease-in 0.2s;
     color: black;
     font-size: 18px;
-    background-color: white !important;
+    background-color: white;
 }
 
 .nav-item-top:hover,
 .nav-item:hover {
-    background-color: rgba(73, 71, 71, 0.144) !important;
-    border-radius: 20px !important;
+    background-color: rgba(73, 71, 71, 0.144);
     color: black !important;
 }
 
@@ -43,7 +42,7 @@
     vertical-align: bottom;
 }
 
-.nv-icon-24 {
+.nv-icon-22 {
     font-size: 20px !important;
     vertical-align: bottom;
 }
