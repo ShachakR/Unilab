@@ -2,9 +2,9 @@
     <div class="container-fluid">
         <div class="ml-4">
             @if (Auth::guest())
-            <a class="navbar-brand" href="{{ url('/') }}">UNILAB</a>
+            <a class="navbar-brand" style="font-family: 'Crete Round', serif" href="{{ url('/') }}">UNILAB</a>
             @else
-            <a class="navbar-brand" href="{{ url('/home') }}">UNILAB</a>
+            <a class="navbar-brand" style="font-family: 'Crete Round', serif" href="{{ url('/home') }}">UNILAB</a>
             @endif
         </div>
 

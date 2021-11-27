@@ -85,10 +85,6 @@
     width: 15%;
 }
 
-.main-container .filler-left.extra {
-    width: 35%;
-}
-
 .main-container .filler-right {
     width: 40%;
 }
@@ -99,7 +95,6 @@
 }
 
 @media (max-width: 950px) {
-    .main-container .filler-left.extra,
     .main-container .filler-right,
     .main-container .filler-left {
         width: 3%;
@@ -113,9 +108,6 @@
 }
 
 @media (max-width: 1300px) {
-    .main-container .filler-left.extra {
-        width: 10%;
-    }
     .main-container .filler-right {
         width: 10%;
     }
