@@ -13,11 +13,12 @@
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX/AAAZ4gk3AAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC"
                         alt="">
                     <div class="card-body text-center">
-                        @if( Auth::user()->username == $username)
+                        @if( Auth::user()->username == $user->username)
                         @include('inc.user.profile.edit')
                         @endif
-                        <h5 class="card-title mt-3">{{$username}}</h5>
-                        <p class="card-text">Some description</p>
+                        <h5 class="card-title mt-3">{{$user->username}}</h5>
+                        <h5 class="card-text">Studies at: <span id="university_label" >{{$profile->university_name}}</span></h5>
+                        <p class="card-text lead"> <span id="description_space" >{{$profile->description}}</span></p>
                     </div>
                 </div>
             </div>
