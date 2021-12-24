@@ -24,7 +24,7 @@
                         <div class="input-group mb-3">
                             <span class="input-group-text">Description</span>
                             <input name="description" id="description_field" type="text" class="form-control"
-                            placeholder="Introduce yourself!" aria-label="description">
+                            value="{{ $profile->description != null ? $profile->description : '' }}" placeholder="Introduce yourself!" aria-label="description">
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -36,9 +36,7 @@ $(function() {
                 dataType: "json",
                 success: function(response) {
                     document.getElementById('university_label').innerHTML = response['new_university_name'];
-                    if (response['new_description']) {
-                        document.getElementById('description_space').innerHTML = response['new_description'];
-                    }
+                    document.getElementById('description_space').innerHTML = response['new_description'];
                 }
             });
         } else {

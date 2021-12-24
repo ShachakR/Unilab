@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfilesController;
+use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +28,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/courses', [CoursesController::class, 'index'])->name('courses');
     Route::get('/{username}', [ProfilesController::class, 'index'])->name('profile');
     Route::put('/{username}', [ProfilesController::class, 'update'])->name('profile.update');
 });

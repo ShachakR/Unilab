@@ -37,15 +37,9 @@ class ProfilesController extends Controller
     {
         $profile = User::find($request['user_id'])->profile;
         $profile->university_name = $request['university_name'];
-
-        if($request['description'] != null || $request['description'] != ''){
-            $profile->description = $request['description'];
-            $profile->save();
-            return ['new_university_name' => $request['university_name'], 'new_description' => $request['description']];
-        }
-
+        $profile->description = $request['description'];
         $profile->save();
-
-        return ['new_university_name' => $request['university_name']];
+        
+        return ['new_university_name' => $request['university_name'], 'new_description' => $request['description']];
     }
 }
