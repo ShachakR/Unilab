@@ -14,8 +14,6 @@ $(function() {
         var university_name = university_search_field.value;
 
         if (university_names_arr.includes(university_name)) {
-            $('#edit_profile_modal').modal('hide');
-
             var url = '/'.concat(user.username);
             var description = document.getElementById('description_field').value;
 
@@ -35,6 +33,7 @@ $(function() {
                 contentType: "application/json",
                 dataType: "json",
                 success: function(response) {
+                    $('#edit_profile_modal').modal('hide');
                     document.getElementById('university_label').innerHTML = response['new_university_name'];
                     document.getElementById('description_space').innerHTML = response['new_description'];
                 }
