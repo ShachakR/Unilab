@@ -21,9 +21,9 @@ class ProfilesController extends Controller
             $user = User::where('username', '=', $username)->firstOrFail();
             $universities = University::get(['name']);
             $profile = $user->profile;
-            return view('user.profile', compact('user', 'universities', 'profile'));
+            return view('content.user.profile', compact('user', 'universities', 'profile'));
         }
-        return view('user.profile_failed', compact('username'));
+        return view('content.user.profile_failed', compact('username'));
     }
 
     /**

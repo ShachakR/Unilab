@@ -12,6 +12,6 @@ class CoursesController extends Controller
         $profile = Auth::user()->profile; 
         $university = University::where('name', '=', $profile->university_name)->firstOrFail();
         $courses = $university->courses;
-        return view('course/courses', compact('profile', 'courses'));
+        return view('content.course.courses', compact('profile', 'courses'));
     }
 }

@@ -9,13 +9,14 @@
                     <div class="d-flex justify-content-center mb-3 mt-3">
                         <h5>{{ $profile->university_name != null ? $profile->university_name : '' }} </h5>
                     </div>
+                    @include('inc.course.course_add_request')
                     <div class="mb-1">
                         <input name="search-bar" id="searchbox-input" type="text" class="form-control"
                             placeholder="Search Courses..." aria-label="University">
                     </div>
                     @foreach ($courses as $course)
                         <div class="card course-card">
-                            <a class="bookmark-icon font-size-30"><i class="material-icons">bookmark_border</i></a></li>
+                            <a class="bookmark-icon font-size-30"><i id='icon' class="material-icons-outlined">bookmark_add</i></a></li>
                             <div class="card-body lead">
                                 <h5 class="card-title ">{{ $course->course_code }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Rating: </h6>
@@ -27,14 +28,5 @@
             </div>
         </div>
     </div>
-    <script>
-        $(function() {
-            $('#searchbox-input').on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $(".course-card").filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
-    </script>
+    <script src="{{ URL::asset('/js/course/course_main.js') }}"></script>
 @endsection
