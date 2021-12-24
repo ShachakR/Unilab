@@ -1,0 +1,24 @@
+.bookmark-icon {
+    position: absolute;
+    align-self: flex-end;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+.bookmark-icon>i {
+    font-size: 34px;
+    transition: ease-in 0.2s;
+}
+
+.bookmark-icon>i:hover {
+    color: #0d6efd;
+}
+
+.course-card {
+    transition: ease-in 0.1s;
+    cursor: pointer;
+}
+
+.course-card:hover {
+    border: #0d6efd solid 1px;
+}

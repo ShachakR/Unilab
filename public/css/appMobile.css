@@ -75,6 +75,7 @@
 .main-container {
     display: flex;
     margin-top: 55px;
+    margin-bottom: 65px;
     height: calc(100vh - 60px);
     overflow-y: hidden;
 }
