@@ -15,14 +15,12 @@ $(function() {
             iconElement.removeClass('material-icons-outlined')
             iconElement.addClass('material-icons')
 
-            iconElement.css("color", "#0d6efd");
             iconElement.html('bookmark_remove');
             //call to add bookmark on the backend 
         } else {
             iconElement.removeClass('material-icons')
             iconElement.addClass('material-icons-outlined')
 
-            iconElement.css("color", "black");
             iconElement.html('bookmark_add');
             //call to remove bookmark on the backend 
         }

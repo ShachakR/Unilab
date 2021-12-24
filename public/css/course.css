@@ -5,6 +5,10 @@
     margin-top: 20px;
 }
 
+.bookmark-icon>i.material-icons {
+    color: #0d6efd;
+}
+
 .bookmark-icon>i {
     font-size: 34px;
     transition: ease-in 0.2s;
