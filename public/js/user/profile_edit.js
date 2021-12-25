@@ -13,7 +13,7 @@ $(function() {
     saveBtn.addEventListener("click", function(e) {
         var university_name = university_search_field.value;
 
-        if (university_names_arr.includes(university_name)) {
+        if (university_names_arr.includes(university_name) || university_name == '') {
             var url = '/'.concat(user.username);
             var description = document.getElementById('description_field').value;
 
