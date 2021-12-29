@@ -30,6 +30,8 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/courses', [CoursesController::class, 'index'])->name('courses');
+    Route::get('/courses/{course_code}', [CoursesController::class, 'show'])->name('course');
+    Route::put('/courses/{course_code}', [CoursesController::class, 'review'])->name('course.review');
     Route::get('/{username}', [ProfilesController::class, 'index'])->name('profile');
     Route::put('/{username}', [ProfilesController::class, 'update'])->name('profile.update');
 });

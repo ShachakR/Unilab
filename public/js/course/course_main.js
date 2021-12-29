@@ -1,3 +1,4 @@
+//This file handles front-end of all the courses for a specific university
 $(function() {
     $('#searchbox-input').on("keyup", function() {
         var value = $(this).val().toLowerCase();
@@ -25,5 +26,5 @@ $(function() {
             //call to remove bookmark on the backend 
         }
 
-    })
+    });
 });

@@ -10,10 +10,15 @@ class Course extends Model
     use HasFactory;
     protected $fillable = [
         'course_code',
-        'university_id'
+        'university_id',
+        'rating'
     ];
     
     public function university(){
         return $this->belongsTo(University::class);
+    }
+
+    public function reviews(){
+        return $this->hasMany(CourseReview::class);
     }
 }
