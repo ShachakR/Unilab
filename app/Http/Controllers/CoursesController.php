@@ -24,8 +24,9 @@ class CoursesController extends Controller
     public function show($course_code){
         $course = Course::where('course_code', '=', $course_code)->firstOrFail(); 
         $user = Auth::user();
+        $username = $user->username; 
         $user_review = CourseReview::where('username',$user->username)->where('course_id',$course->id)->first();
-        return view('content.course.course', compact('course', 'user', 'user_review'));
+        return view('content.course.course', compact('course', 'username', 'user_review'));
     }
 
     
@@ -66,7 +67,7 @@ class CoursesController extends Controller
         $course->rating = ($total_rating / $total_reviews);
         $course->save();
 
-        $data = ['course' => json_encode($course), 'course_reviews' => json_encode($course->reviews), 'user' => json_encode(Auth::user())];
+        $data = ['course' => json_encode($course), 'course_reviews' => json_encode($course->reviews)];
         return $data;
     }
 }

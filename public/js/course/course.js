@@ -38,7 +38,6 @@ $(function() {
 
     //set defualt values if user has reviewed the course before --> easier for editing 
     if (user_review != null) {
-        console.log(user_review);
         review_modal_button.html('Edit Review');
         save_review_btn.html('Save Review');
 
@@ -75,7 +74,7 @@ $(function() {
             'online': is_online,
             'description': description,
             'course_id': course.id,
-            'username': user.username
+            'username': username
         }
 
         $.ajax({
@@ -90,7 +89,6 @@ $(function() {
             success: function(response) {
                 course = JSON.parse(response['course']);
                 reviews = JSON.parse(response['course_reviews']);
-                user = JSON.parse(response['user']);
                 setRatings();
 
                 //Set text 

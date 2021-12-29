@@ -39,7 +39,7 @@
     <script>
         var course = @json($course);
         var reviews = @json($course->reviews);
-        var user = @json($user);
+        var username = @json($username);
         var user_review = @json($user_review);
     </script>
     <script src="{{ URL::asset('/js/course/course.js') }}"></script>
