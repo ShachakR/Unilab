@@ -1,55 +1,51 @@
-//This file handles front-end of a specific course
+//This file handles front-end of a specific professor
 $(function() {
 
     //Review modal 
     // Get elements 
-    var course_rating_display = $('#course-rating-display');
-    var course_rating_range = $('#course-rating-range');
+    var professor_rating_display = $('#professor-rating-display');
+    var professor_rating_range = $('#professor-rating-range');
 
     var difficulty_rating_display = $('#difficulty-rating-display');
     var difficulty_rating_range = $('#difficulty-rating-range');
 
-    setRangeSlider(course_rating_range, course_rating_display, course_rating_range.val());
+    setRangeSlider(professor_rating_range, professor_rating_display, professor_rating_range.val());
     setRangeSlider(difficulty_rating_range, difficulty_rating_display, difficulty_rating_range.val());
 
     //modal buttons
     var add_review_btn = $('#add_review');
     var save_review_btn = $('#save_review');
 
-    //online checkbox 
-    var is_online = $('#online-checkbox');
+    //take_again checkbox 
+    var take_again = $('#take_again-checkbox');
 
     //description 
     var description = $('#description');
 
-    //grade selector 
-    var grade_recived = $('#grade-recived-selector');
-
     //set the rating on page load
-    setRatings(course['rating'], reviews, 'course');
+    setRatings(professor['rating'], reviews, 'professor');
 
-    //set defualt values if user has reviewed the course before --> easier for editing 
+    //set defualt values if user has reviewed the professor before --> easier for editing 
     if (user_review != null) {
         add_review_btn.html('Edit Review');
         save_review_btn.html('Save Review');
 
-        setRangeSlider(course_rating_range, course_rating_display, user_review['course_rating']);
+        setRangeSlider(professor_rating_range, professor_rating_display, user_review['professor_rating']);
         setRangeSlider(difficulty_rating_range, difficulty_rating_display, user_review['difficulty_rating']);
 
-        is_online.prop('checked', user_review['online']);
-        grade_recived.val(user_review['grade_recived']);
+        take_again.prop('checked', user_review['take_again']);
 
         if (user_review['description'] != "none")
             description.html(user_review['description']);
     }
 
     var postReviewHandler = function(response) {
-        course = JSON.parse(response['course']);
-        reviews = JSON.parse(response['course_reviews']);
-        setRatings(course['rating'], reviews, 'course');
+        professor = JSON.parse(response['professor']);
+        reviews = JSON.parse(response['professor_reviews']);
+        setRatings(professor['rating'], reviews, 'professor');
 
         //Set text for review distribution and ratings
-        $('#average_rating').html(course['rating'] + ' / 5');
+        $('#average_rating').html(professor['rating'] + ' / 5');
         $('#total-review-counter').html(reviews.length + ' total reviews');
         add_review_btn.html('Edit Review');
 
@@ -58,25 +54,21 @@ $(function() {
     }
 
     //Save the review --> send data to server
-    var url = '/courses/'.concat(course['course_code']);
+    var url = '/professors/'.concat(professor['name']);
     save_review_btn.on("click", function(e) {
-        //online checkbox value
-        is_online = $('#online-checkbox').is(':checked');
+        //take_again checkbox value
+        take_again = $('#take_again-checkbox').is(':checked');
 
         //description value
         description = $('#description').val();
         if (description == "") description = "none";
 
-        //grade recivered value
-        grade_recived = $('#grade-recived-selector option:selected').text();
-
         var data = {
-            'course_rating': course_rating_range.val(),
+            'professor_rating': professor_rating_range.val(),
             'difficulty_rating': difficulty_rating_range.val(),
-            'grade_recived': grade_recived,
-            'online': is_online,
+            'take_again': take_again,
             'description': description,
-            'course_id': course.id,
+            'professor_id': professor.id,
             'username': username
         }
 

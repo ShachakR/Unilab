@@ -20,4 +20,8 @@ class University extends Model
     public function courses(){
         return $this->hasMany(Course::class);
     }
+
+    public function professors(){
+        return $this->hasMany(Professor::class);
+    }
 }

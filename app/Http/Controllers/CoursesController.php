@@ -13,11 +13,11 @@ class CoursesController extends Controller
     public function index(){
         $profile = Auth::user()->profile; 
         if($profile->university_name == '' || $profile->university_name == null){
-            return view('content.course.courses', compact('profile'));
+            return view('content.no_university_selected');
         }
         $university = University::where('name', '=', $profile->university_name)->firstOrFail();
         $courses = $university->courses;
-        return view('content.course.courses', compact('profile', 'courses'));
+        return view('content.course.list_page', compact('profile', 'courses'));
     }
 
     //shows specific course page
@@ -25,8 +25,8 @@ class CoursesController extends Controller
         $course = Course::where('course_code', '=', $course_code)->firstOrFail(); 
         $user = Auth::user();
         $username = $user->username; 
-        $user_review = CourseReview::where('username',$user->username)->where('course_id',$course->id)->first();
-        return view('content.course.course', compact('course', 'username', 'user_review'));
+        $user_review = CourseReview::where('username', $username)->where('course_id',$course->id)->first();
+        return view('content.course.review_page', compact('course', 'username', 'user_review'));
     }
 
     

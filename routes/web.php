@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\ProfessorsController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,9 +30,18 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+    //Courses
     Route::get('/courses', [CoursesController::class, 'index'])->name('courses');
     Route::get('/courses/{course_code}', [CoursesController::class, 'show'])->name('course');
     Route::put('/courses/{course_code}', [CoursesController::class, 'review'])->name('course.review');
+
+    //professors
+    Route::get('/professors', [ProfessorsController::class, 'index'])->name('professors');
+    Route::get('/professors/{name}', [ProfessorsController::class, 'show'])->name('professor');
+    Route::put('/professors/{name}', [ProfessorsController::class, 'review'])->name('professor.review');
+
+    //profiles
     Route::get('/{username}', [ProfilesController::class, 'index'])->name('profile');
     Route::put('/{username}', [ProfilesController::class, 'update'])->name('profile.update');
 });

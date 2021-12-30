@@ -11,6 +11,9 @@
         <i class="{{ request()->is('courses') ? 'material-icons' : 'material-icons-outlined' }} nv-icon-36">class</i>  
         <span class="{{ request()->is('courses') ? 'fw-bold' : '' }}">Courses</span> 
      </a>
-    <a class="nav-item" href=""> <i class="material-icons-outlined nv-icon-36">face</i>  <span>Professors</span></a></li>
+     <a class="nav-item" href="{{ route('professors') }}"> 
+        <i class="{{ request()->is('professors') ? 'material-icons' : 'material-icons-outlined' }} nv-icon-36">face</i>  
+        <span class="{{ request()->is('professors') ? 'fw-bold' : '' }}">Professors</span> 
+     </a>
     <a class="nav-item" href=""> <i class="material-icons-outlined nv-icon-36">bookmarks</i>  <span>Bookmarks</span></a></li>
 </div>

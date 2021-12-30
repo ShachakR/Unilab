@@ -1,8 +1,8 @@
-//This file handles front-end of all the courses for a specific university
+//This file handles listing the professors/courses pages for a specific university 
 $(function() {
     $('#searchbox-input').on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $(".course-card").filter(function() {
+        $(".main-card").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
