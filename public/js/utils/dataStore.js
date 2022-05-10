@@ -1,6 +1,7 @@
 function restProtc(protc, data, url, callback) {
     if( (protc != "PUT" && protc != "POST" && protc != "GET" && protc != "DELETE") ) return; 
     data = data == null ? "" : JSON.stringify(data);
+    
     $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
