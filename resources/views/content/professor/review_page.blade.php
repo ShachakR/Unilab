@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
     <div class="container mr-0">
@@ -35,8 +35,9 @@
                             </div>
                         @endfor
                     </div>
-
-                    @include('inc.professor.professor_review')
+                    @if(Auth::check())
+                        @include('inc.professor.professor_review')
+                    @endif
                 </div>
             </div>
         </div>
@@ -44,8 +45,8 @@
     <script>
         var professor = @json($professor);
         var reviews = @json($professor->reviews);
-        var username = @json($username);
-        var user_review = @json($user_review);
+        var username = @isset($username) @json($username) @else null @endif;
+        var user_review = @isset($user_review) @json($user_review)  @else null @endif;
     </script>
     <script src="{{ URL::asset('/js/review_page.js') }}"></script>
     <script src="{{ URL::asset('/js/professor/professor.js') }}"></script>

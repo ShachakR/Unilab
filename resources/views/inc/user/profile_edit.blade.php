@@ -37,7 +37,7 @@
 </div>
 <script>
     //Declate data for JS files 
-    var university_names = @json($universities);
+    var universities = @json($universities);
     var user = @json($user)
 </script>
 

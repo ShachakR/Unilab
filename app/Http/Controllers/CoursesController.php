@@ -11,21 +11,30 @@ use Illuminate\Support\Facades\Auth;
 class CoursesController extends Controller
 {
     public function index(){
-        $profile = Auth::user()->profile; 
-        if($profile->university_name == '' || $profile->university_name == null){
+        session_start();
+        $selected_university =  $_SESSION['selected_university'];
+        if(!$selected_university){
             return view('content.no_university_selected');
         }
-        $university = University::where('name', '=', $profile->university_name)->firstOrFail();
+        $university = $selected_university;
         $courses = $university->courses;
-        return view('content.course.list_page', compact('profile', 'courses'));
+        return view('content.course.list_page', compact('university', 'courses'));
     }
 
     //shows specific course page
     public function show($course_code){
         $course = Course::where('course_code', '=', $course_code)->firstOrFail(); 
-        $user = Auth::user();
-        $username = $user->username; 
-        $user_review = CourseReview::where('username', $username)->where('course_id',$course->id)->first();
+        
+        if(Auth::check()){
+            $user = Auth::user();
+            $username = $user->username; 
+            $user_review = CourseReview::where('username', $username)->where('course_id',$course->id)->first();
+        }else{
+            $user = null;
+            $username = null;
+            $user_review = null; 
+        }
+
         return view('content.course.review_page', compact('course', 'username', 'user_review'));
     }
 

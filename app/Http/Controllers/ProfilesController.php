@@ -33,7 +33,7 @@ class ProfilesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $profile = User::find($request['user_id'])->profile;
         $profile->university_name = $request['university_name'];

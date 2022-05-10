@@ -12,22 +12,29 @@ class ProfessorsController extends Controller
 {
     public function index()
     {
-        $profile = Auth::user()->profile;
-        if ($profile->university_name == '' || $profile->university_name == null) {
+        session_start();
+        $selected_university =  $_SESSION['selected_university'];
+        if(!$selected_university){
             return view('content.no_university_selected');
         }
-        $university = University::where('name', '=', $profile->university_name)->firstOrFail();
+        $university = $selected_university;
         $professors = $university->professors;
-        return view('content.professor.list_page', compact('profile', 'professors'));
+        return view('content.professor.list_page', compact('university', 'professors'));
     }
 
     //shows specific professor page
     public function show($name)
     {
         $professor = Professor::where('name', '=', $name)->firstOrFail();
-        $user = Auth::user();
-        $username = $user->username;
-        $user_review = ProfessorReview::where('username', $username)->where('professor_id', $professor->id)->first();
+        if(Auth::check()){
+            $user = Auth::user();
+            $username = $user->username;
+            $user_review = ProfessorReview::where('username', $username)->where('professor_id', $professor->id)->first();
+        }else{
+            $user = null;
+            $username = null;
+            $user_review = null; 
+        }
         return view('content.professor.review_page', compact('professor', 'username', 'user_review'));
     }
 

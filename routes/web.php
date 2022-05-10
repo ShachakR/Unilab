@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ProfessorsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Utils\GlobalResource;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,30 +19,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    if(Auth::guest()){
-        return view('welcome');
-    }else{
-        return redirect()->route('home');
-    }
-    
+    return redirect()->route('home');
 });
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function(){
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-    //Courses
-    Route::get('/courses', [CoursesController::class, 'index'])->name('courses');
-    Route::get('/courses/{course_code}', [CoursesController::class, 'show'])->name('course');
-    Route::put('/courses/{course_code}', [CoursesController::class, 'review'])->name('course.review');
+//Courses
+Route::get('/courses', [CoursesController::class, 'index'])->name('courses');
+Route::get('/courses/{course_code}', [CoursesController::class, 'show'])->name('course');
+Route::put('/courses/{course_code}', [CoursesController::class, 'review'])->name('course.review');
 
-    //professors
-    Route::get('/professors', [ProfessorsController::class, 'index'])->name('professors');
-    Route::get('/professors/{name}', [ProfessorsController::class, 'show'])->name('professor');
-    Route::put('/professors/{name}', [ProfessorsController::class, 'review'])->name('professor.review');
+//professors
+Route::get('/professors', [ProfessorsController::class, 'index'])->name('professors');
+Route::get('/professors/{name}', [ProfessorsController::class, 'show'])->name('professor');
+Route::put('/professors/{name}', [ProfessorsController::class, 'review'])->name('professor.review');
 
-    //profiles
-    Route::get('/{username}', [ProfilesController::class, 'index'])->name('profile');
-    Route::put('/{username}', [ProfilesController::class, 'update'])->name('profile.update');
-});
+//profiles
+Route::get('/{username}', [ProfilesController::class, 'index'])->name('profile');
+Route::put('/{username}', [ProfilesController::class, 'update'])->name('profile.update');
+
+//Globals
+Route::put('/GlobalResource/SelectedUniversity/{university_name}', [GlobalResource::class, 'setSelectedUniversity']);
+Route::get('/GlobalResource/GetUniversities', [GlobalResource::class, 'getUniversities']);
+Route::get('/GlobalResource/GetSelectedUniversity', [GlobalResource::class, 'getSelectedUniversity']);

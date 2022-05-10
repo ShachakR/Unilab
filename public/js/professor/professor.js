@@ -72,7 +72,7 @@ $(function() {
             'username': username
         }
 
-        handleReview(data, url, postReviewHandler);
+        restProtc('PUT', data, url, postReviewHandler)
 
     });
 });

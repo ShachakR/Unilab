@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
     <div class="container mr-0">
@@ -7,7 +7,7 @@
             <div class="col-ld-8 mt-2">
                 <div class="card">
                     <div class="d-flex justify-content-center mb-3 mt-3">
-                        <h5>{{ $profile->university_name }} </h5>
+                        <h5>{{ $university->name }} </h5>
                     </div>
                     @include('inc.professor.professor_add')
                     <div class="mb-1">

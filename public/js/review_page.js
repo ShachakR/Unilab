@@ -65,17 +65,5 @@ function setRangeSlider(range, display, defualtValue) {
 
 //Add/edit review to page
 function handleReview(data, url, callback) {
-    $.ajax({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        type: "PUT",
-        url: url,
-        data: JSON.stringify(data),
-        contentType: "application/json",
-        dataType: "json",
-        success: function(response) {
-            callback(response); // callback on a review page for specific handling 
-        }
-    });
+    restProtc('PUT', data, url, callback)
 }
