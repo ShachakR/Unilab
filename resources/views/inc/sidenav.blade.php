@@ -22,4 +22,4 @@
         <span id="bookmarks-1">Bookmarks</span>
     </a>
 </div>
-<script src="{{ URL::asset('/js/routeLoading/sideNavRoutes.js') }}"></script>
+{{-- <script src="{{ URL::asset('/js/routeLoading/sideNavRoutes.js') }}"></script> --}}

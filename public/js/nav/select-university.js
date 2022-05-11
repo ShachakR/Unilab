@@ -7,13 +7,13 @@ $(function () {
   var university_names = [];
 
   function getUniversities(data){
-    universities = JSON.parse(data['universities']); 
+    universities = JSON.parse(data['data']); 
 
     for (var i = 0; i < universities.length; i++){
       university_names[i] = universities[i]['name'];
     }
 
-    autocomplete(document.getElementById('university_search_field-nav'), universities);
+    autocomplete(document.getElementById('university_search_field-nav'), universities, 'name');
   }
 
   function setSelectedUniversity(data){

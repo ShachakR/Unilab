@@ -1,5 +1,5 @@
 //This file handles front-end of a specific professor
-$(function() {
+$(function () {
 
     //Review modal 
     // Get elements 
@@ -39,7 +39,24 @@ $(function() {
             description.html(user_review['description']);
     }
 
-    var postReviewHandler = function(response) {
+    //set autocomplete for course search
+    var courses = [];
+    var course_names = [];
+
+    function setData(data) {
+        courses = JSON.parse(data['data']);
+
+        for (var i = 0; i < courses.length; i++) {
+            course_names[i] = courses[i]['name'];
+        }
+
+        autocomplete(document.getElementById('review-course_search_field'), courses, 'course_code');
+    }
+
+    url = '/GlobalResource/GetCourses';
+    restProtc("GET", null, url, setData);
+
+    var postReviewHandler = function (response) {
         professor = JSON.parse(response['professor']);
         reviews = JSON.parse(response['professor_reviews']);
         setRatings(professor['rating'], reviews, 'professor');
@@ -55,13 +72,16 @@ $(function() {
 
     //Save the review --> send data to server
     var url = '/professors/'.concat(professor['name']);
-    save_review_btn.on("click", function(e) {
+    save_review_btn.on("click", function (e) {
         //take_again checkbox value
         take_again = $('#take_again-checkbox').is(':checked');
 
         //description value
         description = $('#description').val();
         if (description == "") description = "none";
+
+        course_code = $('#review-course_search_field').val(); 
+        if (course_code == "") course_code = "none";
 
         var data = {
             'professor_rating': professor_rating_range.val(),

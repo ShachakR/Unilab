@@ -1,8 +1,8 @@
 //Credit and Source: https://www.w3schools.com/howto/howto_js_autocomplete.asp
-function autocomplete(inp, list) {
+function autocomplete(inp, list, atr) {
     arr = [];
     for (var i = 0; i < list.length; i++)
-        arr[i] = list[i]['name'].toString();
+        arr[i] = list[i][atr].toString();
         
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/

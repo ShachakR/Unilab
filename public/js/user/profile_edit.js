@@ -1,7 +1,7 @@
 $(function() {
 
     var university_search_field = document.getElementById('university_search_field');
-    autocomplete(university_search_field, universities);
+    autocomplete(university_search_field, universities, 'name');
 
     var saveBtn = document.getElementById("save_changes");
 

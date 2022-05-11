@@ -30,9 +30,5 @@
             </div>
         </div>
     </div>
-    {{-- <script>
-        var courses = @json($courses);
-    </script>
-    <script src="{{ URL::asset('/js/routeLoading/courseRoutes.js') }}"></script> --}}
     <script src="{{ URL::asset('/js/listing.js') }}"></script>
 @endsection
