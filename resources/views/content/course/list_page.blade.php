@@ -22,7 +22,7 @@
                                 <h5 class="card-title ">{{ $course->course_code }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Rating: {{ $course->rating }} / 5</h6>
                                 <h6 class="card-subtitle mb-2 text-muted">Reviews: {{ $course->reviews->count() }}</h6>
-                                <a class="stretched-link" href="{{ route('course', $course->course_code) }}"></a>
+                                <a id="{{ $course->course_code }}" class="stretched-link" href="{{ route('course', $course->course_code) }}"></a>
                             </div>
                         </div>
                     @endforeach
@@ -30,5 +30,9 @@
             </div>
         </div>
     </div>
+    {{-- <script>
+        var courses = @json($courses);
+    </script>
+    <script src="{{ URL::asset('/js/routeLoading/courseRoutes.js') }}"></script> --}}
     <script src="{{ URL::asset('/js/listing.js') }}"></script>
 @endsection

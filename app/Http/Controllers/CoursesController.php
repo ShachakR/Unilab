@@ -12,10 +12,10 @@ class CoursesController extends Controller
 {
     public function index(){
         session_start();
-        $selected_university =  $_SESSION['selected_university'];
-        if(!$selected_university){
+        if(!isset($_SESSION['selected_university'])){
             return view('content.no_university_selected');
         }
+        $selected_university = $_SESSION['selected_university'];
         $university = $selected_university;
         $courses = $university->courses;
         return view('content.course.list_page', compact('university', 'courses'));

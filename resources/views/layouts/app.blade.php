@@ -432,7 +432,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
     <script src="{{ URL::asset('/js/utils/autocomplete.js') }}"></script>
-    <script src="{{ URL::asset('/js/utils/dataStore.js') }}"></script>
+    <script src="{{ URL::asset('/js/utils/restProtc.js') }}"></script>
 </head>
 
 <body class="antialiased">
@@ -441,8 +441,10 @@
 
     <div class="main-container">
         @yield('main-container')
+        
     </div>
 
+    
 </body>
 
 </html>

@@ -8,6 +8,7 @@
         </div>
         <div>
             <button id="select-modal-btn" type="button" class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#select-university-modal">
+                Select University
             </button>
         </div>
         <div>

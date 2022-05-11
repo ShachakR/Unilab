@@ -1,8 +1,8 @@
 @extends('./layouts.app')
 
 @section('main-container')
-    <div class="filler-left"></div>
-    <div class="side-content-left">@include('inc.sidenav')</div>
-    <div class="content"> @yield('content')</div>
-    <div class="filler-right"></div>
+        <div id="filler-left" class="filler-left"></div>
+        <div id="side-content-left" class="side-content-left">@include('inc.sidenav')</div>
+        <div id="content" class="content"> @yield('content')</div>
+        <div id="filler-right" class="filler-right"></div>
 @endsection

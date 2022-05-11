@@ -13,7 +13,7 @@
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX/AAAZ4gk3AAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC"
                         alt="">
                     <div class="card-body text-center">
-                        @if( Auth::user()->username == $user->username)
+                        @if(Auth::check() && Auth::user()->username == $user->username)
                         @include('inc.user.profile_edit')
                         @endif
                         <h5 class="card-title mt-3">{{$user->username}}</h5>
