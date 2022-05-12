@@ -80,8 +80,8 @@ $(function () {
         description = $('#description').val();
         if (description == "") description = "no comment";
 
-        course_code = $('#course_search_field').val(); 
-        if (course_code == "") course_code = "none";
+        related_course_code = $('#course_search_field').val(); 
+        if (related_course_code == "") related_course_code = "not specified";
 
         var data = {
             'professor_rating': professor_rating_range.val(),
@@ -89,7 +89,8 @@ $(function () {
             'take_again': take_again,
             'description': description,
             'professor_id': professor.id,
-            'username': username
+            'username': username,
+            'related_course_code': related_course_code
         }
 
         restProtc('PUT', data, url, postReviewHandler)

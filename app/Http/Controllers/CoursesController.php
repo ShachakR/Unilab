@@ -49,7 +49,9 @@ class CoursesController extends Controller
             'difficulty_rating' => doubleval($request['difficulty_rating']),
             'grade_recived' => $request['grade_recived'],
             'online' => boolval($request['online']),
-            'description' => $request['description']
+            'description' => $request['description'],
+            'related_professor_name' => $request['related_professor_name'],
+            'likes' => 0
             ]
 
         );
@@ -60,6 +62,7 @@ class CoursesController extends Controller
         $course_review->description = $request['description'];
         $course_review->username = $request['username'];
         $course_review->course_id = $request['course_id'];
+        $course_review->related_professor_name = $request['related_professor_name'];
         $course_review->save();
 
         //calculate new course rating

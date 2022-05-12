@@ -84,6 +84,9 @@ $(function() {
         description = $('#description').val();
         if (description == "") description = "no comment";
 
+        var related_professor_name = $('#professor_search_field').val();
+        if (related_professor_name == "") related_professor_name = "not specified";
+
         //grade recivered value
         grade_recived = $('#grade-recived-selector option:selected').text();
 
@@ -94,7 +97,8 @@ $(function() {
             'online': is_online,
             'description': description,
             'course_id': course.id,
-            'username': username
+            'username': username,
+            'related_professor_name': related_professor_name
         }
 
         handleReview(data, url, postReviewHandler);

@@ -20,6 +20,8 @@ class CreateProfessorReviewsTable extends Migration
             $table->boolean('take_again'); // would take again? 
             $table->longText('description');
             $table->string('username');
+            $table->string('related_course_code');
+            $table->unsignedBigInteger('likes');
             $table->unsignedBigInteger('professor_id');
             $table->timestamps();
 

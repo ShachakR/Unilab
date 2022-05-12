@@ -37,10 +37,17 @@
     padding-bottom: 0;
 }
 
-.review-actions > a > span{
-    padding-left: 3px;
+.atr{
+    color: var(--main-color);
+}
+.link{
+    transition: 300ms;
+}
+.link:hover{
+    border-bottom: solid 1px black;
 }
 
 .review-actions > a > i{
     vertical-align: bottom;
+    padding-right: 3px;
 }

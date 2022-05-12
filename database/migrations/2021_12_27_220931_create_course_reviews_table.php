@@ -21,6 +21,8 @@ class CreateCourseReviewsTable extends Migration
             $table->boolean('online'); // was online? 
             $table->longText('description');
             $table->string('username');
+            $table->string('related_professor_name');
+            $table->unsignedBigInteger('likes');
             $table->unsignedBigInteger('course_id');
             $table->timestamps();
 

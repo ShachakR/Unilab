@@ -16,6 +16,8 @@ class CourseReview extends Model
         'online',
         'description',
         'username',
+        'related_professor_name',
+        'likes',
         'course_id'
     ];
 

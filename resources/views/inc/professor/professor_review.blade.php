@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Taken With</span>
+                        <span class="input-group-text">Course</span>
                         <div class="autocomplete" style="width:300px">
                             <input name="course_name" id="course_search_field" type="text" class="form-control"
                             placeholder="Course" value="" aria-label="University">

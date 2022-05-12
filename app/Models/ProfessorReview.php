@@ -14,6 +14,8 @@ class ProfessorReview extends Model
         'take_again',
         'description',
         'username',
+        'related_course_code',
+        'likes',
         'professor_id'
     ];
 

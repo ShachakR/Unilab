@@ -48,7 +48,9 @@ class ProfessorsController extends Controller
                 'professor_rating' => doubleval($request['professor_rating']),
                 'difficulty_rating' => doubleval($request['difficulty_rating']),
                 'take_again' => boolval($request['take_again']),
-                'description' => $request['description']
+                'description' => $request['description'],
+                'related_course_code' => $request['related_course_code'],
+                'likes' => 0
             ]
 
         );
@@ -58,6 +60,7 @@ class ProfessorsController extends Controller
         $professor_review->description = $request['description'];
         $professor_review->username = $request['username'];
         $professor_review->professor_id = $request['professor_id'];
+        $professor_review->related_course_code = $request['related_course_code'];
         $professor_review->save();
 
         //calculate new professor rating
