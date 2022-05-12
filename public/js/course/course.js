@@ -28,6 +28,23 @@ $(function() {
     //set the rating on page load
     setRatings(course['rating'], reviews, 'course');
 
+     //set autocomplete for course search
+     var professors = [];
+     var professor_names = [];
+ 
+     function setData(data) {
+        professors = JSON.parse(data['data']);
+ 
+         for (var i = 0; i < professors.length; i++) {
+            professor_names[i] = professors[i]['name'];
+         }
+ 
+         autocomplete(document.getElementById('professor_search_field'), professors, 'name');
+     }
+ 
+     url = '/GlobalResource/GetProfessors';
+     restProtc("GET", null, url, setData);
+
     //set defualt values if user has reviewed the course before --> easier for editing 
     if (user_review != null) {
         add_review_btn.html('Edit Review');
@@ -65,7 +82,7 @@ $(function() {
 
         //description value
         description = $('#description').val();
-        if (description == "") description = "none";
+        if (description == "") description = "no comment";
 
         //grade recivered value
         grade_recived = $('#grade-recived-selector option:selected').text();

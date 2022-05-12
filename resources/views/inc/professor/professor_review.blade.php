@@ -1,6 +1,6 @@
 <div class="text-center mb-3">
     <!-- Button trigger modal -->
-    <button id="add_review" type="button" class="btn btn-primary" data-bs-toggle="modal"
+    <button id="add_review" type="button" class="btn btn-primary mt-3" data-bs-toggle="modal"
         data-bs-target="#review_modal">Add Review</button>
 
     <!-- Modal -->
@@ -31,15 +31,15 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text">Course Taken With</span>
+                        <span class="input-group-text">Taken With</span>
                         <div class="autocomplete" style="width:300px">
-                            <input name="course_name" id="review-course_search_field" type="text" class="form-control"
+                            <input name="course_name" id="course_search_field" type="text" class="form-control"
                             placeholder="Course" value="" aria-label="University">
                         </div>
                     </div>
                     <div class="input-group needs-validation">
                         <span class="input-group-text">Description</span>
-                        <textarea id="description" maxlength="300" class="form-control" aria-label="description"></textarea>
+                        <textarea id="description" maxlength="200" class="form-control" aria-label="description"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

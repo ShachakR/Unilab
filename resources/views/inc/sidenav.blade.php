@@ -17,9 +17,10 @@
         <i id="professors-0"class="{{ request()->is('professors') ? 'material-icons' : 'material-icons-outlined' }} nv-icon-36">face</i>  
         <span id="professors-1"class="{{ request()->is('professors') ? 'fw-bold' : '' }}">Professors</span> 
      </a>
+     @if(Auth::check())
     <a id="bookmarks"class="nav-item" href=""> 
         <i id="bookmarks-0" class="material-icons-outlined nv-icon-36">bookmarks</i>  
         <span id="bookmarks-1">Bookmarks</span>
     </a>
+    @endif
 </div>
-{{-- <script src="{{ URL::asset('/js/routeLoading/sideNavRoutes.js') }}"></script> --}}

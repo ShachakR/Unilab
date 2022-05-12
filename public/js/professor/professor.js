@@ -50,7 +50,7 @@ $(function () {
             course_names[i] = courses[i]['name'];
         }
 
-        autocomplete(document.getElementById('review-course_search_field'), courses, 'course_code');
+        autocomplete(document.getElementById('course_search_field'), courses, 'course_code');
     }
 
     url = '/GlobalResource/GetCourses';
@@ -78,9 +78,9 @@ $(function () {
 
         //description value
         description = $('#description').val();
-        if (description == "") description = "none";
+        if (description == "") description = "no comment";
 
-        course_code = $('#review-course_search_field').val(); 
+        course_code = $('#course_search_field').val(); 
         if (course_code == "") course_code = "none";
 
         var data = {

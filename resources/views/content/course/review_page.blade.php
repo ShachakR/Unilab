@@ -34,10 +34,16 @@
                                     style="width:42px; color: #0d6efd">0%</h6>
                             </div>
                         @endfor
+                        @if(Auth::check())
+                            @include('inc.course.course_review')
+                        @endif
+                        <h2 class="review-title">Reviews</h2>
+                        <div class="reviews">
+                            @foreach ( $course->reviews as $review)
+                            @include('inc.course.course_review_card')
+                            @endforeach
+                        </div>
                     </div>
-                    @if(Auth::check())
-                    @include('inc.course.course_review')
-                    @endif
                 </div>
             </div>
         </div>

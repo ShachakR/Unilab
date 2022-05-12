@@ -38,6 +38,12 @@
                     @if(Auth::check())
                         @include('inc.professor.professor_review')
                     @endif
+                    <h2 class="review-title">Reviews</h2>
+                    <div class="reviews">
+                        @foreach ( $professor->reviews as $review)
+                            @include('inc.professor.professor_review_card')
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
