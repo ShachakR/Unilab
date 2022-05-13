@@ -48,7 +48,7 @@
         var user = @isset($user) @json($user) @else null @endif;
         var user_review = @isset($user_review) @json($user_review)  @else null @endif;
     </script>
-    <script src="{{ URL::asset('/js/likesHandler.js') }}"></script>
-    <script src="{{ URL::asset('/js/review_page.js') }}"></script>
+    <script src="{{ URL::asset('/js/review/likesHandler.js') }}"></script>
+    <script src="{{ URL::asset('/js/review/review_page.js') }}"></script>
     <script src="{{ URL::asset('/js/course/course.js') }}"></script>
 @endsection

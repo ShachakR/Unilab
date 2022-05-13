@@ -1,5 +1,7 @@
 //Credit and Source: https://www.w3schools.com/howto/howto_js_autocomplete.asp
 function autocomplete(inp, list, atr) {
+    if(inp == null || list == null) return;
+    
     arr = [];
     for (var i = 0; i < list.length; i++)
         arr[i] = list[i][atr].toString();

@@ -3,9 +3,9 @@
         <a class="fw-bold" href="">{{ $review->username}}</a>
         <div class="review-card-rating">
             <div class="d-flex lead justify-content-center mb-1 mt-2">
-                <div id="stars">
+                <div id="stars-{{ $review->id }}">
                     @for ($i = 1; $i <= 5; $i++)
-                        <span id={{ $i }} class="material-icons-outlined star-rating">star_outlined</span>
+                        <span id="{{ $i }}" class="material-icons-outlined star-rating">star_outlined</span>
                     @endfor
                 </div>
             </div>
@@ -21,9 +21,7 @@
         <p class="card-text">{{ $review->description}}</p>
     </div>
     <div class="review-footer">
-        <div class="review-date mt-3 lead">
-            {{ $review->created_at}}
-        </div>
+        <div id="review-date-{{ $review->id }}" class="review-date mt-3 lead"></div>
         <div class="review-actions">
 
             @php ($liked = false) @endphp
@@ -35,14 +33,14 @@
                         @endif
                     @endforeach
                 @endif
-                <a class="likeBtn" href="#"> 
+                <a id="likeBtn" class="likeBtn" href="#"> 
                     <i id="likeIcon" class="likeIcon nv-22 {{ $liked ? 'material-icons' : 'material-icons-outlined' }}">thumb_up</i>
                     <span id="like_count" >{{ $review->likes }} Like</span>
                     <span id="reviewId" data-data="{{ $review->id }}"></span>
                     <span id="reviewOnwer" data-data="{{ $review->username }}"></span>
                 </a>
             @else
-                <a href="#"> <i class="nv-22 material-icons-outlined">thumb_up</i><span >{{ $review->likes }} Like</span></a>
+                <a id="likeBtn" href="#"> <i class="nv-22 material-icons-outlined">thumb_up</i><span >{{ $review->likes }} Like</span></a>
             @endif
 
             <a id="flagBtn" href="#"> <i class="nv-22 material-icons-outlined">flag</i><span>Report</span></a>
@@ -50,3 +48,8 @@
     </div>
 </div>
 <hr>
+<script src="{{ URL::asset('/js/review/reviewCard.js') }}"></script>
+<script>
+    var review = @json($review);
+    setReviewInfo(review, 'course');
+</script>

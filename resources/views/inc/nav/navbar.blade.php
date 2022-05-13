@@ -3,7 +3,7 @@
 @include('inc.nav.select-university-modal')
 <nav class="nav-body navbar fixed-top">
     <div class="container-fluid">
-        <div class="ml-4">
+        <div id="nav-title" class="ml-4">
             <a class="navbar-brand" style="font-family: 'Crete Round', serif" href="{{ url('/') }}">UNILAB</a>
         </div>
         <div>
@@ -13,14 +13,12 @@
         </div>
         <div>
             @if (Auth::guest())
-                <div>
-                    <button type="button" class="nav-item-top" data-bs-toggle="modal" data-bs-target="#login-modal">
-                        Login
-                    </button>
-                    <button type="button" class="nav-item-top" data-bs-toggle="modal" data-bs-target="#register-modal">
-                        Register
-                    </button>
-                </div>
+                <button type="button" class="nav-item-top" data-bs-toggle="modal" data-bs-target="#login-modal">
+                    Login
+                </button>
+                <button type="button" class="nav-item-top" data-bs-toggle="modal" data-bs-target="#register-modal">
+                    Register
+                </button>
             @else
                 <div class="dropdown">
                     <button class="nav-item-top dropdown-toggle" type="button" id="dropdownMenuButton1"

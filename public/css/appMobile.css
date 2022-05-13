@@ -92,5 +92,18 @@
     z-index: 1000;
 }
 
+@media (max-width: 650px) {
+    #nav-title {
+        display: none;
+    }
+    .nav-item-top{
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+    #nav-body{
+       justify-content: space-around;
+    }
+}
+
 
 /* ***CONTENT END*** */
