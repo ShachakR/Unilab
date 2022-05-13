@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Professor;
 use App\Models\ProfessorReview;
 use App\Models\University;
+use App\Models\Like;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,16 +27,20 @@ class ProfessorsController extends Controller
     public function show($name)
     {
         $professor = Professor::where('name', '=', $name)->firstOrFail();
+
         if(Auth::check()){
+            //current user
             $user = Auth::user();
-            $username = $user->username;
-            $user_review = ProfessorReview::where('username', $username)->where('professor_id', $professor->id)->first();
-        }else{
-            $user = null;
-            $username = null;
-            $user_review = null; 
+            //user liked reviews on this course  
+            $likes = Like::select('review_id')->where('user_id', $user->id)->where('courseOrProfessor', 'professor')->where('liked', true)->get()->toArray();
+            //convert to concentional array
+
+            //user review on this course page
+            $user_review = ProfessorReview::where('username', $user->username)->where('professor_id', $professor->id)->first();
+            return view('content.professor.review_page', compact('professor', 'likes', 'user', 'user_review'));
         }
-        return view('content.professor.review_page', compact('professor', 'username', 'user_review'));
+
+        return view('content.professor.review_page', compact('professor'));
     }
 
     //handle professor reviews
@@ -50,7 +55,7 @@ class ProfessorsController extends Controller
                 'take_again' => boolval($request['take_again']),
                 'description' => $request['description'],
                 'related_course_code' => $request['related_course_code'],
-                'likes' => 0
+                'likes' => intval(0)
             ]
 
         );

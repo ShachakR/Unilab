@@ -40,7 +40,7 @@
                         <h2 class="review-title">Reviews</h2>
                         <div class="reviews">
                             @foreach ( $course->reviews as $review)
-                            @include('inc.course.course_review_card')
+                                @include('inc.course.course_review_card')
                             @endforeach
                         </div>
                     </div>
@@ -49,11 +49,13 @@
         </div>
     </div>
     <script>
+        var courseOrProfessor = 'course';
         var course = @json($course);
         var reviews = @json($course->reviews);
-        var username = @isset($username) @json($username) @else null @endif;
+        var user = @isset($user) @json($user) @else null @endif;
         var user_review = @isset($user_review) @json($user_review)  @else null @endif;
     </script>
+    <script src="{{ URL::asset('/js/likesHandler.js') }}"></script>
     <script src="{{ URL::asset('/js/review_page.js') }}"></script>
     <script src="{{ URL::asset('/js/course/course.js') }}"></script>
 @endsection

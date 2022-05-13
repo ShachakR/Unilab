@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\CourseReview;
+use App\Models\Like;
 use App\Models\University;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,16 +27,18 @@ class CoursesController extends Controller
         $course = Course::where('course_code', '=', $course_code)->firstOrFail(); 
         
         if(Auth::check()){
+            //current user
             $user = Auth::user();
-            $username = $user->username; 
-            $user_review = CourseReview::where('username', $username)->where('course_id',$course->id)->first();
-        }else{
-            $user = null;
-            $username = null;
-            $user_review = null; 
+            //user liked reviews on this course  
+            $likes = Like::select('review_id')->where('user_id', $user->id)->where('courseOrProfessor', 'course')->where('liked', true)->get()->toArray();
+            //convert to concentional array
+
+            //user review on this course page
+            $user_review = CourseReview::where('username', $user->username)->where('course_id',$course->id)->first();
+            return view('content.course.review_page', compact('course', 'likes', 'user', 'user_review'));
         }
 
-        return view('content.course.review_page', compact('course', 'username', 'user_review'));
+        return view('content.course.review_page', compact('course'));
     }
 
     
@@ -51,7 +54,7 @@ class CoursesController extends Controller
             'online' => boolval($request['online']),
             'description' => $request['description'],
             'related_professor_name' => $request['related_professor_name'],
-            'likes' => 0
+            'likes' => intval(0)
             ]
 
         );
@@ -76,7 +79,9 @@ class CoursesController extends Controller
             $total_rating += $review->course_rating;
         }
 
-        $course->rating = ($total_rating / $total_reviews);
+        $newRating = round(($total_rating / $total_reviews));
+
+        $course->rating = $newRating;
         $course->save();
 
         $data = ['course' => json_encode($course), 'course_reviews' => json_encode($course->reviews)];

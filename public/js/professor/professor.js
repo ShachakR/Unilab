@@ -89,11 +89,13 @@ $(function () {
             'take_again': take_again,
             'description': description,
             'professor_id': professor.id,
-            'username': username,
+            'username': user['username'],
             'related_course_code': related_course_code
         }
 
-        restProtc('PUT', data, url, postReviewHandler)
+        console.log(data);
+
+        restProtc('PUT', data, url, postReviewHandler);
 
     });
 });

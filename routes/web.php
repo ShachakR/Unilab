@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ProfessorsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LikesController;
 use App\Http\Controllers\Utils\GlobalResource;
 use Illuminate\Support\Facades\Route;
 
@@ -46,3 +47,7 @@ Route::get('/GlobalResource/GetUniversities', [GlobalResource::class, 'getUniver
 Route::get('/GlobalResource/GetProfessors', [GlobalResource::class, 'getProfessors']);
 Route::get('/GlobalResource/GetCourses', [GlobalResource::class, 'getCourses']);
 Route::get('/GlobalResource/GetSelectedUniversity', [GlobalResource::class, 'getSelectedUniversity']);
+
+//review likes
+Route::put('/review/like', [LikesController::class, 'like'])->name('like');
+Route::put('/review/unlike', [LikesController::class, 'unlike'])->name('unlike');

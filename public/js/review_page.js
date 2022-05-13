@@ -43,7 +43,8 @@ function setRatings(ratingValue, reviews, type) {
 
     for (let i = 1; i <= 5; i++) {
         let precentage = (countStars[i] / total_reviews) * 100;
-
+        precentage = Math.round(precentage);
+        
         let percentage_text = $('#percentage-' + i);
         let bar = $('#filled-rating-' + i);
 
@@ -61,9 +62,4 @@ function setRangeSlider(range, display, defualtValue) {
     range.on('change', function() {
         display.html($(this).val());
     });
-}
-
-//Add/edit review to page
-function handleReview(data, url, callback) {
-    restProtc('PUT', data, url, callback)
 }

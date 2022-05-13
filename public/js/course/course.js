@@ -42,7 +42,7 @@ $(function() {
          autocomplete(document.getElementById('professor_search_field'), professors, 'name');
      }
  
-     url = '/GlobalResource/GetProfessors';
+     var url = '/GlobalResource/GetProfessors';
      restProtc("GET", null, url, setData);
 
     //set defualt values if user has reviewed the course before --> easier for editing 
@@ -97,11 +97,10 @@ $(function() {
             'online': is_online,
             'description': description,
             'course_id': course.id,
-            'username': username,
+            'username': user['username'],
             'related_professor_name': related_professor_name
         }
-
-        handleReview(data, url, postReviewHandler);
+        restProtc('PUT', data, url, postReviewHandler)
 
     });
 });

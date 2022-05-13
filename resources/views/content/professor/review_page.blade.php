@@ -49,11 +49,13 @@
         </div>
     </div>
     <script>
+        var courseOrProfessor = 'professor';
         var professor = @json($professor);
         var reviews = @json($professor->reviews);
-        var username = @isset($username) @json($username) @else null @endif;
+        var user = @isset($user) @json($user) @else null @endif;
         var user_review = @isset($user_review) @json($user_review)  @else null @endif;
     </script>
+    <script src="{{ URL::asset('/js/likesHandler.js') }}"></script>
     <script src="{{ URL::asset('/js/review_page.js') }}"></script>
     <script src="{{ URL::asset('/js/professor/professor.js') }}"></script>
 @endsection
