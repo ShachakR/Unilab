@@ -93,8 +93,6 @@ $(function () {
             'related_course_code': related_course_code
         }
 
-        console.log(data);
-
         restProtc('PUT', data, url, postReviewHandler);
 
     });

@@ -79,7 +79,8 @@ class ProfessorsController extends Controller
             $total_rating += $review->professor_rating;
         }
 
-        $professor->rating = ($total_rating / $total_reviews);
+        $newRating = round(($total_rating / $total_reviews));
+        $professor->rating = $newRating;
         $professor->save();
 
         $data = ['professor' => json_encode($professor), 'professor_reviews' => json_encode($professor->reviews)];
