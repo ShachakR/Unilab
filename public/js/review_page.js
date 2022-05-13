@@ -32,7 +32,7 @@ function setRatings(ratingValue, reviews, type) {
                 break;
         }
 
-        let i = Math.round(rating);
+        let i = rating;
         countStars[i] += 1;
     });
 

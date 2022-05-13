@@ -45,7 +45,7 @@ class CoursesController extends Controller
     //handle course reviews
     public function review(Request $request){
         //where clause by defualt assumes '='
-        $course_review = CourseReview::firstOrCreate(
+        $course_review = CourseReview::updateOrCreate(
             ['username' => $request['username'], 'course_id' => $request['course_id']],
             [
             'course_rating' => doubleval($request['course_rating']),
@@ -54,19 +54,9 @@ class CoursesController extends Controller
             'online' => boolval($request['online']),
             'description' => $request['description'],
             'related_professor_name' => $request['related_professor_name'],
-            'likes' => intval(0)
             ]
 
         );
-        $course_review->course_rating = doubleval($request['course_rating']);
-        $course_review->difficulty_rating = doubleval($request['difficulty_rating']);
-        $course_review->grade_recived = $request['grade_recived'];
-        $course_review->online = boolval($request['online']);
-        $course_review->description = $request['description'];
-        $course_review->username = $request['username'];
-        $course_review->course_id = $request['course_id'];
-        $course_review->related_professor_name = $request['related_professor_name'];
-        $course_review->save();
 
         //calculate new course rating
         $course = Course::find($request['course_id']);

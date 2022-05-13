@@ -37,8 +37,6 @@ class LikesController extends Controller
 
         $review->likes = $review->likes + 1;
         $review->save();
-
-        return ['likes' => $review->likes];
     }
 
     public function unlike(Request $data){
@@ -61,7 +59,5 @@ class LikesController extends Controller
         
         $review->likes = $review->likes - 1;
         $review->save();
-
-        return ['likes' => $review->likes];
     }
 }

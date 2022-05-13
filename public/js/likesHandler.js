@@ -32,17 +32,15 @@ $(function () {
         if (likeIcon.classList.contains('material-icons')) {
             likeIcon.classList.remove('material-icons');
             likeIcon.classList.add('material-icons-outlined');
+            likeCount.innerHTML = (parseInt(likeCount.innerHTML) -1 + ' Like');
         } else {
             likeIcon.classList.add('material-icons');
             likeIcon.classList.remove('material-icons-outlined');
+            likeCount.innerHTML = (parseInt(likeCount.innerHTML) + 1 + ' Like');
         }
 
-        restProtc("PUT", data, url, callback)
+        liked = !liked;
 
-        function callback(response) {
-            likeCount.innerHTML = (JSON.parse(response['likes']) + ' Like');
-            liked = !liked;
-        }
-
+        restProtc("PUT", data, url, null)
     };
 });

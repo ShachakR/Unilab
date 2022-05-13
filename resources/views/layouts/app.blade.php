@@ -439,7 +439,7 @@
 
 <body class="antialiased">
 
-    @include('inc.navbar')
+    @include('inc.nav.navbar')
 
     <div class="main-container">
         @yield('main-container')

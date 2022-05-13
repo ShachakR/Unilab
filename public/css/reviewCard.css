@@ -55,7 +55,6 @@
 
 @media (max-width: 650px) {
     .review-card-atr{
-        display: flex;
         flex-direction: column;
     }
 }

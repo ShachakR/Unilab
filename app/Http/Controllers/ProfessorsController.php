@@ -47,26 +47,17 @@ class ProfessorsController extends Controller
     public function review(Request $request)
     {
         //where clause by defualt assumes '='
-        $professor_review = ProfessorReview::firstOrCreate(
+        $professor_review = ProfessorReview::updateOrCreate(
             ['username' => $request['username'], 'professor_id' => $request['professor_id']],
             [
                 'professor_rating' => doubleval($request['professor_rating']),
                 'difficulty_rating' => doubleval($request['difficulty_rating']),
                 'take_again' => boolval($request['take_again']),
                 'description' => $request['description'],
-                'related_course_code' => $request['related_course_code'],
-                'likes' => intval(0)
+                'related_course_code' => $request['related_course_code']
             ]
 
         );
-        $professor_review->professor_rating = doubleval($request['professor_rating']);
-        $professor_review->difficulty_rating = doubleval($request['difficulty_rating']);
-        $professor_review->take_again = boolval($request['take_again']);
-        $professor_review->description = $request['description'];
-        $professor_review->username = $request['username'];
-        $professor_review->professor_id = $request['professor_id'];
-        $professor_review->related_course_code = $request['related_course_code'];
-        $professor_review->save();
 
         //calculate new professor rating
         $professor = Professor::find($request['professor_id']);
