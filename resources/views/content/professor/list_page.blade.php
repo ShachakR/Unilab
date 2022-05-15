@@ -22,5 +22,12 @@
             </div>
         @endforeach
     </div>
+    <script>
+        var university_name = @json($university->name );
+        var request_type = 'professor';
+        var input_field = 'input_field';
+        var submit_request_btn = 'submit_request';
+    </script>
     <script src="{{ URL::asset('/js/listing.js') }}"></script>
+    <script src="{{ URL::asset('/js/user/sendRequest.js') }}"></script>
 @endsection

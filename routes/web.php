@@ -5,6 +5,7 @@ use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ProfessorsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LikesController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Utils\GlobalResource;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+//Admin
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin');
+
+//Admin-Users
+Route::get('/admin/users', [AdminController::class, 'users'])->name('users');
+Route::put('/admin/setAdmin', [AdminController::class, 'setAdmin']);
+
+//Admin-Requests
+Route::get('/admin/requests', [AdminController::class, 'requests'])->name('requests');
+
+//User Requests
+Route::put('/admin/createUserRequest', [AdminController::class, 'createUserRequest']);
+Route::put('/admin/handleUserRequest', [AdminController::class, 'handleUserRequest']);
 
 //Courses
 Route::get('/courses', [CoursesController::class, 'index'])->name('courses');

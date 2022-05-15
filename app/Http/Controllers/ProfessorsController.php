@@ -19,7 +19,7 @@ class ProfessorsController extends Controller
         }
         $selected_university = $_SESSION['selected_university'];
         $university = $selected_university;
-        $professors = $university->professors;
+        $professors = Professor::where('university_id', $university->id)->get();;
         return view('content.professor.list_page', compact('university', 'professors'));
     }
 

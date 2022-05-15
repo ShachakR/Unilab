@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="{{ asset('css/user/profile.css') }}">
     <link rel="stylesheet" href="{{ asset('css/reviewPage.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/reviewCard.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/notify/main.css') }}" />
     <style>
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
         html {
@@ -435,6 +436,8 @@
     </script>
     <script src="{{ URL::asset('/js/utils/autocomplete.js') }}"></script>
     <script src="{{ URL::asset('/js/utils/restProtc.js') }}"></script>
+    <script src="{{ URL::asset('/js/user/sendRequest.js') }}"></script>
+    <script src="{{ URL::asset('/js/utils/notify.js') }}"></script>
 </head>
 
 <body class="antialiased">

@@ -22,7 +22,7 @@ class CreateCourseReviewsTable extends Migration
             $table->longText('description');
             $table->string('username');
             $table->string('related_professor_name');
-            $table->unsignedBigInteger('likes');
+            $table->unsignedBigInteger('likes')->default(0);
             $table->unsignedBigInteger('course_id');
             $table->timestamps();
 

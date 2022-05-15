@@ -13,18 +13,18 @@ $(function () {
       university_names[i] = universities[i]['name'];
     }
 
-    autocomplete(document.getElementById('university_search_field-nav'), universities, 'name');
+    autocomplete(document.getElementById('university_search_field_nav'), universities, 'name');
   }
 
   function setSelectedUniversity(data){
     var selectedName = JSON.parse(data['selected']);
     if(!selectedName){
-      document.getElementById('university_search_field-nav').value = 'Select University';
+      document.getElementById('university_search_field_nav').value = 'Select University';
       return; 
     }
     selectedName = selectedName['name'];
     selectModalBtn.html(selectedName); 
-    document.getElementById('university_search_field-nav').value = selectedName;
+    document.getElementById('university_search_field_nav').value = selectedName;
   }
 
   var url = '/GlobalResource/GetSelectedUniversity'; 
@@ -34,7 +34,7 @@ $(function () {
   restProtc("GET", null, url, getUniversities);
 
   selectBtn.on('click', function () {
-    var selectedUniName = document.getElementById('university_search_field-nav').value;
+    var selectedUniName = document.getElementById('university_search_field_nav').value;
     if (!selectedUniName || !university_names.includes(selectedUniName)) return;
 
     selectModalBtn.html(selectedUniName);

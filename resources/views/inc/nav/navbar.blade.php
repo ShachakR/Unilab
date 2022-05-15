@@ -35,10 +35,17 @@
                         </form>
                         <a class="dropdown-item" href=""> <i class="material-icons-outlined nv-icon-22">settings</i>
                             <span class="ml-3">Settings</span></a>
+
+                        @if ( Auth::user()->is_admin )
+                        <hr>
+                        <a class="dropdown-item" href="{{ route('admin') }}" target="_blank"> <i class="material-icons-outlined nv-icon-22">admin_panel_settings</i>
+                            <span class="ml-3">Admin</span></a>
+                        @endif
+                        
                     </div>
                 </div>
             @endif
         </div>
     </div>
-    <script src="{{ URL::asset('/js/nav/select-university.js') }}"></script>
+    <script src="{{ URL::asset('/js/nav/select_university.js') }}"></script>
 </nav>

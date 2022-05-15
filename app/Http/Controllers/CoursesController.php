@@ -18,7 +18,7 @@ class CoursesController extends Controller
         }
         $selected_university = $_SESSION['selected_university'];
         $university = $selected_university;
-        $courses = $university->courses;
+        $courses = Course::where('university_id', $university->id)->get();
         return view('content.course.list_page', compact('university', 'courses'));
     }
 
@@ -29,9 +29,9 @@ class CoursesController extends Controller
         if(Auth::check()){
             //current user
             $user = Auth::user();
+            
             //user liked reviews on this course  
             $likes = Like::select('review_id')->where('user_id', $user->id)->where('courseOrProfessor', 'course')->where('liked', true)->get()->toArray();
-            //convert to concentional array
 
             //user review on this course page
             $user_review = CourseReview::where('username', $user->username)->where('course_id',$course->id)->first();

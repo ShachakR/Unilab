@@ -16,13 +16,18 @@
                 <div class="modal-body">
                     <div class="input-group mb-3">
                         <span class="input-group-text">Course Code</span>
-                        <input name="course_code" id="course_code_field" type="text" class="form-control"
+                        <input name="course_code" id="input_field" type="text" class="form-control"
                             placeholder="Ex: MATH 1300" aria-label="course_code">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="submit_changes" type="submit" class="btn btn-primary">Submit Request</button>
+                    <button id="submit_request" type="submit" class="btn btn-primary" onclick="sendRequest(
+                        'input_field',
+                        'course',
+                        '{{ $university->name }}',
+                        'course_request_modal'
+                    )">Submit Request</button>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@
                 </div>
             @endif
 
-            {{ __('You are logged in!') }}
+            {{ __('Home page') }}
         </div>
     </div>
 @endsection
