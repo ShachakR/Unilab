@@ -78,7 +78,7 @@ function getRequestsDataTable(){
 
                 row.remove();
 
-                var url = "/admin/handleUserRequest"
+                var url = "/request/handleUserRequest"
         
                 restProtc("PUT", rqeuest, url, null); 
             } );
@@ -93,7 +93,7 @@ function getRequestsDataTable(){
 
                 row.remove();
 
-                var url = "/admin/handleUserRequest"
+                var url = "/request/handleUserRequest"
         
                 restProtc("PUT", rqeuest, url, null); 
             } );

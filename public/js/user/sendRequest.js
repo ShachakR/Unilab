@@ -7,10 +7,10 @@ function sendRequest(input_field, request_type, university_name, modal_id) {
     var data = {
         'type': request_type,
         'university_name': university_name,
-        'request_val': capatalizeFirstLetter(request_val),
+        'request_val': format(request_val),
     }
 
-    url = '/admin/createUserRequest'
+    url = '/request/createUserRequest'
     modal.modal('hide');
     restProtc("PUT", data, url, callback)
 }
@@ -30,7 +30,7 @@ function callback() {
 }
 
 
-function capatalizeFirstLetter(str) {
+function format(str) {
     str = str.toLowerCase();
     const arr = str.split(" ");
     for (var i = 0; i < arr.length; i++) {

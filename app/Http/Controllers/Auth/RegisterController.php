@@ -72,6 +72,11 @@ class RegisterController extends Controller
             'is_admin' => false,
         ]);
 
+        if(User::all()->count() == 1){
+            $user->is_admin = true;
+            $user->save();
+        }
+
         Profile::create([
             'university_name' => "",
             'description' => "",
