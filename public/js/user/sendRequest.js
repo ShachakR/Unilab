@@ -4,10 +4,12 @@ function sendRequest(input_field, request_type, university_name, modal_id) {
     var request_val = $('#' + input_field).val();
     if (request_val == null || request_val == '') return;
 
+    var makeFullCase = (request_type == 'course') ? true : false;
+
     var data = {
         'type': request_type,
         'university_name': university_name,
-        'request_val': format(request_val),
+        'request_val': format(request_val, makeFullCase),
     }
 
     url = '/request/createUserRequest'
@@ -30,8 +32,14 @@ function callback() {
 }
 
 
-function format(str) {
-    str = str.toLowerCase();
+function format(str, makeFullCase) {
+
+    if(makeFullCase){
+        str = str.toUpperCase();
+    }else{
+        str = str.toLowerCase();
+    }
+
     const arr = str.split(" ");
     for (var i = 0; i < arr.length; i++) {
         arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
