@@ -17,12 +17,21 @@ function sendRequest(input_field, request_type, university_name, modal_id) {
     restProtc("PUT", data, url, callback)
 }
 
-function callback() {
+function callback(response) {
     const options = {
         corner: "bottom_right",
     };
 
     const notify = new Notify(options);
+
+    if(response['sent'] == false){
+        notify.render({
+            head: "Request Failed",
+            content: "Already exists",
+            style: "danger",
+        });
+        return;
+    }
 
     notify.render({
         head: "Success",

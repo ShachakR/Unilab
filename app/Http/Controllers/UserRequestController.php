@@ -17,13 +17,30 @@ class UserRequestController extends Controller
         $exists = UserReuqest::where('request_val', $data['request_val'])->where('type', $data['type'])->first();
 
         if($exists != null){
-            return true;
+            return ['sent' => true];
         }
+
+        if($data['type'] == 'university'){
+            if(University::where('name', $data['request_val'])->first()){
+                return ['sent' => false];
+            }
+        }
+        if($data['type'] == 'course'){
+            if(Course::where('course_code', $data['request_val'])->first()){
+                return ['sent' => false];
+            }
+        }
+        if($data['type'] == 'professor'){
+            if(Professor::where('name', $data['request_val'])->first()){
+                return ['sent' => false];
+            }
+        }
+
 
         UserReuqest::create(
             ['request_val' => $data['request_val'], 'university_name' => $data['university_name'], 'type' => $data['type']]);
 
-        return true;
+        return ['sent' => true];
     }
 
     public function handleUserRequest(Request $data){    
