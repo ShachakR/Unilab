@@ -14,9 +14,11 @@
     <tbody>
     </tbody>
     <script>
-        var userData = @json($userData);
-        var columns = ['id', 'username', 'is_admin', 'email', 'created_at'];
-        console.log(userData);
-        injectData(getUsersDataTable(), userData, columns);
+        $(function() {
+            var userData = @json($userData);
+            var currentUsername = @json(Auth::user()->username);
+            var columns = ['id', 'username', 'is_admin', 'email', 'created_at'];
+            injectData(getUsersDataTable(), userData, columns);
+        });
     </script>
 @endsection

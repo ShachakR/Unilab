@@ -33,9 +33,13 @@ function getUsersDataTable(){
         rowCallback: function ( row, data ) {
             // Set the checked state of the checkbox in the table
             $('.is_admin_checkbox', row).prop( 'checked', data[2] === 1 );
-            console.log(data);
-            
+
             $('.is_admin_checkbox', row).on( 'click', function () {
+                if(currentUsername === data[1]){
+                    $('.is_admin_checkbox', row).prop( 'checked', data[2] === 1 );
+                    return;
+                }
+
                 var rqeuest = {
                     'id': data[0],
                     'is_admin': !data[2],
