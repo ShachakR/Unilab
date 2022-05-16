@@ -36,7 +36,7 @@ function getUsersDataTable(){
 
             $('.is_admin_checkbox', row).on( 'click', function () {
                 if(currentUsername === data[1]){
-                    $('.is_admin_checkbox', row).prop( 'checked', data[2] === 1 );
+                    $('.is_admin_checkbox', row).prop( 'checked', data[2]);
                     return;
                 }
 
