@@ -33,17 +33,17 @@
                         @endif
                     @endforeach
                 @endif
-                <a id="likeBtn" class="likeBtn" href="#"> 
+                <a id="likeBtn" class="likeBtn cardBtnEffect" href="#"> 
                     <i id="likeIcon" class="likeIcon nv-22 {{ $liked ? 'material-icons' : 'material-icons-outlined' }}">thumb_up</i>
                     <span id="like_count" >{{ $review->likes }} Like</span>
                     <span id="reviewId" data-data="{{ $review->id }}"></span>
                     <span id="reviewOnwer" data-data="{{ $review->username }}"></span>
                 </a>
             @else
-                <a id="likeBtn" href="#"> <i class="nv-22 material-icons-outlined">thumb_up</i><span >{{ $review->likes }} Like</span></a>
+                <a id="likeBtn" href="#" class="cardBtnEffect"> <i class="nv-22 material-icons-outlined">thumb_up</i><span >{{ $review->likes }} Like</span></a>
             @endif
 
-            <a id="flagBtn" href="#"> <i class="nv-22 material-icons-outlined">flag</i><span>Report</span></a>
+            <a id="flagBtn" href="#" class="cardBtnEffect"> <i class="nv-22 material-icons-outlined">flag</i><span>Report</span></a>
         </div>
     </div>
 </div>

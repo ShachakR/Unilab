@@ -52,6 +52,21 @@
     padding-right: 3px;
 }
 
+.cardBtnEffect > i{
+    transition: .4s;
+    padding: 6px;
+    margin-right: 1px;
+    font-size: 19px;
+}
+.cardBtnEffect > span{
+    font-size: 18px !important;
+    transition: .4s;
+}
+
+.cardBtnEffect:hover > i{
+    background-color: rgba(73, 71, 71, 0.144) !important;
+    border-radius: 5px;
+}
 
 @media (max-width: 650px) {
     .review-card-atr{

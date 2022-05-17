@@ -61,10 +61,10 @@ Route::put('/{username}', [ProfilesController::class, 'update'])->name('profile.
 
 //Globals
 Route::put('/GlobalResource/SelectedUniversity/{university_name}', [GlobalResource::class, 'setSelectedUniversity']);
-Route::get('/GlobalResource/GetUniversities', [GlobalResource::class, 'getUniversities']);
-Route::get('/GlobalResource/GetProfessors', [GlobalResource::class, 'getProfessors']);
-Route::get('/GlobalResource/GetCourses', [GlobalResource::class, 'getCourses']);
 Route::get('/GlobalResource/GetSelectedUniversity', [GlobalResource::class, 'getSelectedUniversity']);
+Route::get('/GlobalResource/GetUniversities', [GlobalResource::class, 'getUniversities']);
+Route::put('/GlobalResource/GetProfessors', [GlobalResource::class, 'getProfessors']);
+Route::put('/GlobalResource/GetCourses', [GlobalResource::class, 'getCourses']);
 
 //review likes
 Route::put('/review/like', [LikesController::class, 'like'])->name('like');

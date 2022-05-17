@@ -2,7 +2,7 @@
 function autocomplete(inp, list, atr) {
     if(inp == null || list == null) return;
     
-    arr = [];
+    let arr = [];
     for (var i = 0; i < list.length; i++)
         arr[i] = list[i][atr].toString();
         

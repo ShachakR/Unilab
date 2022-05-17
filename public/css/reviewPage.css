@@ -63,11 +63,3 @@
     padding-top: 10px;
     text-align: center;
 }
-
-#likeBtn{
-    transition: ease-in 0.2s;
-}
-
-#likeBtn:hover > i{
-    color: #3498db;
-}

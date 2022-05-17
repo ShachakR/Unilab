@@ -8,7 +8,7 @@ $(function () {
 
   function getUniversities(data){
     universities = JSON.parse(data['data']); 
-
+    
     for (var i = 0; i < universities.length; i++){
       university_names[i] = universities[i]['name'];
     }

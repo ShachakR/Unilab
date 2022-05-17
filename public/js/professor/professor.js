@@ -53,8 +53,13 @@ $(function () {
         autocomplete(document.getElementById('course_search_field'), courses, 'course_code');
     }
 
-    url = '/GlobalResource/GetCourses';
-    restProtc("GET", null, url, setData);
+    var url = '/GlobalResource/GetCourses';
+
+     const filter = {
+         'university_id': professor['university_id']
+     }
+     
+     restProtc("PUT", filter, url, setData);
 
     var postReviewHandler = function (response) {
         professor = JSON.parse(response['professor']);

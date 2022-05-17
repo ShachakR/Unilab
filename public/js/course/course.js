@@ -34,16 +34,21 @@ $(function() {
  
      function setData(data) {
         professors = JSON.parse(data['data']);
- 
+        
          for (var i = 0; i < professors.length; i++) {
             professor_names[i] = professors[i]['name'];
          }
  
-         autocomplete(document.getElementById('professor_search_field'), professors, 'name');
+        autocomplete(document.getElementById('professor_search_field'), professors, 'name');
      }
  
      var url = '/GlobalResource/GetProfessors';
-     restProtc("GET", null, url, setData);
+
+     const filter = {
+         'university_id': course['university_id']
+     }
+     
+     restProtc("PUT", filter, url, setData);
 
     //set defualt values if user has reviewed the course before --> easier for editing 
     if (user_review != null) {
