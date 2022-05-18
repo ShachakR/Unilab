@@ -77,12 +77,12 @@
     margin-top: 55px;
     margin-bottom: 65px;
     height: calc(100vh - 60px);
-    overflow-y: hidden;
 }
 
 .main-container .content {
     width: 100%;
     margin-top: 30px;
+    margin-bottom: 65px;
     overflow-y: auto;
 }
 
