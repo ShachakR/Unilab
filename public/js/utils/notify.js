@@ -5,27 +5,27 @@ function Notify(o) {
 	if (!o.corner) o.corner = "top_right";
 	if (!o.delay) o.delay = 5000;
 	if (!o.maxElem) o.maxElem = 10;
-	
+
 	const notifyContainer = document.createElement("div");
-				notifyContainer.id = "notifyContainer";
-				notifyContainer.className = o.corner;
+	notifyContainer.id = "notifyContainer";
+	notifyContainer.className = o.corner;
 	document.body.appendChild(notifyContainer);
 
 	const countAlerts = document.getElementsByClassName("alerts");
 
 	this.notifyCreate = (style, head, content, sound) => {
 		let alerts = document.createElement("div");
-				alerts.className = "alerts";
-				alerts.className += " alerts-" + style;
+		alerts.className = "alerts";
+		alerts.className += " alerts-" + style;
 		if (!content) {
 			alerts.innerHTML = `<h3>${head}</h3>`;
 		} else {
 			alerts.innerHTML = `<h3>${head}</h3><p>${content}</p>`;
 		};
-				notifyContainer.appendChild(alerts);
+		notifyContainer.appendChild(alerts);
 		if (sound) {
 			const audio = new Audio('./assets/sound/notification.mp3');
-					audio.play();
+			audio.play();
 		}
 		setTimeout(function () {
 			alerts.classList.toggle("fadeOut");
@@ -39,7 +39,7 @@ function Notify(o) {
 	this.render = (r) => {
 		// default params
 		if (!r) r = {}
-		const exceptionsParam = !r.style || ( r.style != 'info' && r.style != 'success' && r.style != 'danger' && r.style != 'warning'); 
+		const exceptionsParam = !r.style || (r.style != 'info' && r.style != 'success' && r.style != 'danger' && r.style != 'warning');
 		// console.log(`${exceptionsParam} = ${!r.style} || ( ${r.style != 'info'} && ${r.style != 'success'} && ${r.style != 'danger'} && ${r.style != 'warning'})`)
 		r.style = exceptionsParam ? 'info' : r.style;
 		r.sound = !r.sound ? false : true;
@@ -52,9 +52,9 @@ function Notify(o) {
 		};
 		// r.head = !r.head ? '' : r.head;
 		// r.content = !r.content ? '' : r.content;
-		
-		
-		
+
+
+
 		if (countAlerts.length < o.maxElem) {
 			this.notifyCreate(r.style, r.head, r.content, r.sound);
 		};
