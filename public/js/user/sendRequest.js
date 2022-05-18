@@ -19,7 +19,8 @@ function sendRequest(input_field, request_type, university_name, modal_id) {
 
 function callback(response) {
     const options = {
-        corner: "bottom_right",
+        corner: "top_right",
+        delay: 3000
     };
 
     const notify = new Notify(options);

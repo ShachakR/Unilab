@@ -32,7 +32,7 @@ function Notify(o) {
 		}, o.delay - 300);
 		setTimeout(function () {
 			notifyContainer.removeChild(alerts);
-			document.getElementById("notifyContainer").remove();
+			//document.getElementById("notifyContainer").remove();
 		}, o.delay);
 	};
 
