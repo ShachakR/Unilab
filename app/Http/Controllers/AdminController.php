@@ -16,7 +16,7 @@ class AdminController extends Controller
     }
 
     public function users(){
-        $userData = User::all(); 
+        $userData = User::all()->makeVisible(['email']);
 
         return view('admin.content.users', compact('userData'));
     }
