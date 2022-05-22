@@ -52,6 +52,8 @@
     <script src="{{ URL::asset('/js/utils/restProtc.js') }}"></script>
     <script src="{{ URL::asset('/js/user/sendRequest.js') }}"></script>
     <script src="{{ URL::asset('/js/utils/notify.js') }}"></script>
+    <script src="{{ URL::asset('/js/utils/validators.js') }}"></script>
+    <script src="{{ URL::asset('/js/utils/tooltip.js') }}"></script>
 </head>
 
 <body class="antialiased">

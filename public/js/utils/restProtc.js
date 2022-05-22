@@ -23,6 +23,11 @@ function restProtc(protc, data, url, callback) {
             if(callback){
                 callback(response);
             }
-        }
+        },
+        error: function(response) {
+            if(callback){
+                callback(response);
+            }
+         },
     });
 }

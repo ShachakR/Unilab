@@ -45,3 +45,40 @@ body {
 
 
 /************END SECTION**************/
+
+/************AUTH ELEMENTS **************/
+
+.hide{
+    display: none !important;
+}
+
+.alert-danger-custom{
+    height: 10%;
+    margin-bottom: 10px;
+    color: black;
+    background-color: #fd706157;
+    border-radius: 10px;
+    font-size: small;
+}
+
+.invalid-input{
+    border-color: #fa6554;
+}
+
+.invalid-input-text{
+    font-size: small;
+    color: #fa6554;
+}
+
+.password-tooltip{
+    display: flex;
+    flex-direction: column;
+}
+
+.tooltip-icon{
+    font-size: 20px;
+}
+
+
+
+/************END SECTION**************/
