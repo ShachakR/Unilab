@@ -15,11 +15,11 @@ class LikesController extends Controller
         
         $user_id = $data['user_id'];
         $review_id = $data['review_id']; 
-        $courseOrProfessor = $data['courseOrProfessor'];
+        $type = $data['type'];
 
         $like = Like::updateOrCreate(
             //find like with these attributes 
-            ['user_id' => $user_id, 'review_id' => $review_id, 'courseOrProfessor' => $courseOrProfessor],
+            ['user_id' => $user_id, 'review_id' => $review_id, 'type' => $type],
             //or create one with these attributes
             ['user_id' => intval($user_id), 
             'review_id' => intval($review_id), 
@@ -29,7 +29,7 @@ class LikesController extends Controller
 
         $review;
 
-        if($courseOrProfessor === 'course'){
+        if($type === 'course'){
             $review = CourseReview::where('id', $review_id)->first();
         }else{
             $review = ProfessorReview::where('id', $review_id)->first();
@@ -43,15 +43,15 @@ class LikesController extends Controller
 
         $user_id = $data['user_id'];
         $review_id = $data['review_id']; 
-        $courseOrProfessor = $data['courseOrProfessor']; 
+        $type = $data['type']; 
 
-        $like = Like::where('user_id', $user_id)->where('review_id', $review_id)->where('courseOrProfessor', $courseOrProfessor)->first();
+        $like = Like::where('user_id', $user_id)->where('review_id', $review_id)->where('type', $type)->first();
         $like->liked = boolval(false);
         $like->save();
         
         $review;
 
-        if($courseOrProfessor === 'course'){
+        if($type === 'course'){
             $review = CourseReview::where('id', $review_id)->first();
         }else{
             $review = ProfessorReview::where('id', $review_id)->first();

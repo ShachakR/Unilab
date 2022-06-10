@@ -63,3 +63,13 @@ function setRangeSlider(range, display, defualtValue) {
         display.html($(this).val());
     });
 }
+
+$(function() {
+    $('#add_review').on('click', function(){
+        if(!user){
+            new bootstrap.Modal($('#login-modal')).show();
+            return;
+        }
+        new bootstrap.Modal($('#review_modal')).show();
+    });
+});

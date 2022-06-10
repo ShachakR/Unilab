@@ -1,8 +1,12 @@
 $(function () {
-
     document.querySelectorAll('.likeBtn').forEach(function (obj) {
         obj.addEventListener('click', function(){
-            
+
+            if(!user){
+                new bootstrap.Modal($('#login-modal')).show();
+                return;
+            }
+
             if(user['username'] === obj.querySelector('#reviewOnwer').dataset.data) return;
             click(obj);
         });
@@ -19,7 +23,7 @@ $(function () {
         var data = {
             'user_id': user_id,
             'review_id': review_id,
-            'courseOrProfessor': courseOrProfessor
+            'type': type
         }
 
         let url = '/review/like'

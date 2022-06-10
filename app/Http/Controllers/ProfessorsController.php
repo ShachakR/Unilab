@@ -32,7 +32,7 @@ class ProfessorsController extends Controller
             //current user
             $user = Auth::user();
             //user liked reviews on this course  
-            $likes = Like::select('review_id')->where('user_id', $user->id)->where('courseOrProfessor', 'professor')->where('liked', true)->get()->toArray();
+            $likes = Like::select('review_id')->where('user_id', $user->id)->where('type', 'professor')->where('liked', true)->get()->toArray();
             //convert to concentional array
 
             //user review on this course page

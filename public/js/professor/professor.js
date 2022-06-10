@@ -34,6 +34,7 @@ $(function () {
         setRangeSlider(difficulty_rating_range, difficulty_rating_display, user_review['difficulty_rating']);
 
         take_again.prop('checked', user_review['take_again']);
+        $('#course_search_field').val(user_review['related_course_code']);
 
         if (user_review['description'] != "none")
             description.html(user_review['description']);

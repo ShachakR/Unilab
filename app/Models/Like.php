@@ -12,7 +12,7 @@ class Like extends Model
         'user_id',
         'review_id',
         'liked',
-        'courseOrProfessor'
+        'type'
     ];
     
 }

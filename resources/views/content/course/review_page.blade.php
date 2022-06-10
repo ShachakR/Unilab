@@ -30,9 +30,7 @@
                         style="width:42px; color: #0d6efd">0%</h6>
                 </div>
             @endfor
-            @if(Auth::check())
-                @include('inc.course.course_review')
-            @endif
+            @include('inc.course.course_review')
             <h2 class="review-title">Reviews</h2>
             <div class="reviews">
                 @foreach ( $course->reviews as $review)
@@ -42,7 +40,7 @@
         </div>
     </div>
     <script>
-        var courseOrProfessor = 'course';
+        var type = 'course';
         var course = @json($course);
         var reviews = @json($course->reviews);
         var user = @isset($user) @json($user) @else null @endif;

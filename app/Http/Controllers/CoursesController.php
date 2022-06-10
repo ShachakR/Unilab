@@ -31,7 +31,7 @@ class CoursesController extends Controller
             $user = Auth::user();
             
             //user liked reviews on this course  
-            $likes = Like::select('review_id')->where('user_id', $user->id)->where('courseOrProfessor', 'course')->where('liked', true)->get()->toArray();
+            $likes = Like::select('review_id')->where('user_id', $user->id)->where('type', 'course')->where('liked', true)->get()->toArray();
 
             //user review on this course page
             $user_review = CourseReview::where('username', $user->username)->where('course_id',$course->id)->first();

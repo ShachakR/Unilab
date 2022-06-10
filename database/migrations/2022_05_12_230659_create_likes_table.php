@@ -19,7 +19,7 @@ class CreateLikesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('review_id');
             $table->boolean('liked');
-            $table->string('courseOrProfessor');
+            $table->string('type');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

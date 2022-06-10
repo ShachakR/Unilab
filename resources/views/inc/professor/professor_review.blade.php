@@ -1,7 +1,6 @@
 <div class="text-center mb-3">
     <!-- Button trigger modal -->
-    <button id="add_review" type="button" class="btn btn-primary mt-3" data-bs-toggle="modal"
-        data-bs-target="#review_modal">Add Review</button>
+    <button id="add_review" type="button" class="btn btn-primary mt-3">Add Review</button>
 
     <!-- Modal -->
     <div class="modal fade" id="review_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

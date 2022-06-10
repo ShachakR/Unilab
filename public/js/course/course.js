@@ -60,6 +60,7 @@ $(function() {
 
         is_online.prop('checked', user_review['online']);
         grade_recived.val(user_review['grade_recived']);
+        $('#professor_search_field').val(user_review['related_professor_name']);
 
         if (user_review['description'] != "none")
             description.html(user_review['description']);
