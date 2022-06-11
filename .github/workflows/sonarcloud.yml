@@ -1,6 +1,3 @@
-
-# This workflow helps you trigger a SonarCloud analysis of your code and populates 
-# documentation (https://docs.sonarcloud.io/getting-started/github/)
 name: SonarCloud analysis
 on:
   push:
