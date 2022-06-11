@@ -41,8 +41,8 @@ $(function () {
     }
 
     //set autocomplete for course search
-    var courses = [];
-    var course_names = [];
+    let courses = [];
+    let course_names = [];
 
     function setData(data) {
         courses = JSON.parse(data['data']);
