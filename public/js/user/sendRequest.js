@@ -1,7 +1,8 @@
 
 function sendRequest(input_field, request_type, university_name, modal_id) {
-    var modal = $('#' + modal_id);
-    var request_val = $('#' + input_field).val();
+    const modal = $('#' + modal_id);
+    request_type = request_type.toLowerCase();
+    let request_val = $('#' + input_field).val();
     if (request_val == null || request_val == '') return;
 
     var makeFullCase = (request_type == 'course') ? true : false;

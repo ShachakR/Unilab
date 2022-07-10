@@ -5,7 +5,7 @@
         <div class="d-flex justify-content-center mb-3 mt-3">
             <h5>{{ $university->name }} </h5>
         </div>
-        @include('inc.course.course_add')
+        @include('inc.layouts.type_add', ['type' => 'Course', 'input' => 'Course Code', 'placeholder' => 'MATH 1300'])
         <div class="mb-1">
             <input name="search-bar" id="searchbox-input" type="text" class="form-control" placeholder="Search Courses..."
                 aria-label="University">
@@ -17,8 +17,7 @@
                     <h5 class="card-title ">{{ $course->course_code }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Rating: {{ $course->rating }} / 5</h6>
                     <h6 class="card-subtitle mb-2 text-muted">Reviews: {{ $course->reviews->count() }}</h6>
-                    <a id="{{ $course->course_code }}" class="stretched-link"
-                        href="{{ route('course', $course->course_code) }}"></a>
+                    <a class="stretched-link" href="{{ route('course', $course->course_code) }}"></a>
                 </div>
             </div>
         @endforeach

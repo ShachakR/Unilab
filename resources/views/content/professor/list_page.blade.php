@@ -5,7 +5,7 @@
         <div class="d-flex justify-content-center mb-3 mt-3">
             <h5>{{ $university->name }} </h5>
         </div>
-        @include('inc.professor.professor_add')
+        @include('inc.layouts.type_add', ['type' => 'Professor', 'input' => 'Full Name', 'placeholder' => 'Alex Painter'])
         <div class="mb-1">
             <input name="search-bar" id="searchbox-input" type="text" class="form-control"
                 placeholder="Search Professors..." aria-label="University">
@@ -22,12 +22,5 @@
             </div>
         @endforeach
     </div>
-    <script>
-        var university_name = @json($university->name );
-        var request_type = 'professor';
-        var input_field = 'input_field';
-        var submit_request_btn = 'submit_request';
-    </script>
     <script src="{{ URL::asset('/js/listing.js') }}"></script>
-    <script src="{{ URL::asset('/js/user/sendRequest.js') }}"></script>
 @endsection
