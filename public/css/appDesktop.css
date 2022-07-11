@@ -85,6 +85,10 @@ body {
     width: 15%;
 }
 
+.main-container .filler-left-no-side {
+    width: 40%;
+}
+
 .main-container .filler-right {
     width: 40%;
 }
@@ -96,6 +100,7 @@ body {
 
 @media (max-width: 950px) {
     .main-container .filler-right,
+    .main-container .filler-left-no-side,
     .main-container .filler-left {
         width: 3%;
     }
@@ -114,9 +119,6 @@ body {
 }
 
 @media (max-width: 650px) {
-    #nav-title {
-        display: none;
-    }
     .nav-item-top{
         margin-right: 2px;
         margin-left: 2px;

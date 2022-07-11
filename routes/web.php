@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ProfessorsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LikesController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserRequestController;
@@ -22,11 +23,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('home');
-});
-
 Auth::routes();
+
+Route::get('/', [LandingController::class, 'index'])->name('landing');
+Route::put('/select_university', [LandingController::class, 'select_university']);
+
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 

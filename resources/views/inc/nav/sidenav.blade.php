@@ -3,12 +3,6 @@
         <i id="home-0"class="{{ request()->is('home') ? 'material-icons' : 'material-icons-outlined' }} nv-icon-36">home</i>  
         <span id="home-1"class="{{ request()->is('home') ? 'fw-bold' : '' }}">Home</span> 
     </a>
-    @if(Auth::check())
-    <a id="profile" class="nav-item" href="{{ route('profile', Auth::user()->username ) }}"> 
-        <i id="profile-0"class="{{ request()->is('profile', Auth::user()->username ) ? 'material-icons' : 'material-icons-outlined' }} nv-icon-36">person</i>  
-        <span id="profile-1"class="{{ request()->is('profile', Auth::user()->username ) ? 'fw-bold' : '' }}">Profile</span> 
-     </a>
-     @endif 
      <a id="courses" class="nav-item" href="{{ route('courses') }}"> 
         <i id="courses-0"class="{{ request()->is('courses') ? 'material-icons' : 'material-icons-outlined' }} nv-icon-36">class</i>  
         <span id="courses-1"class="{{ request()->is('courses') ? 'fw-bold' : '' }}">Courses</span> 

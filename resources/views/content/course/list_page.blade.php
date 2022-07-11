@@ -3,7 +3,7 @@
 @section('content')
     <div class="card">
         <div class="d-flex justify-content-center mb-3 mt-3">
-            <h5>{{ $university->name }} </h5>
+            <h5>{{ $university->name }} - Courses</h5>
         </div>
         @include('inc.layouts.type_add', ['type' => 'Course', 'input' => 'Course Code', 'placeholder' => 'MATH 1300'])
         <div class="mb-1">

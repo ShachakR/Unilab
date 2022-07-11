@@ -93,9 +93,6 @@
 }
 
 @media (max-width: 650px) {
-    #nav-title {
-        display: none;
-    }
     .nav-item-top{
         margin-right: 2px;
         margin-left: 2px;

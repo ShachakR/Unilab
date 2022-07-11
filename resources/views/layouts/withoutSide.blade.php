@@ -1,8 +1,7 @@
 @extends('./layouts.app')
 
 @section('main-container')
-    <div class="filler-left"></div>
-    <div class="side-content-left"></div>
+    <div class="filler-left-no-side"></div>
     <div id="content" class="content">
         <div class="container mr-0">
             <div class="row justify-content-center align-middle">
