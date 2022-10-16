@@ -1,4 +1,4 @@
-@extends('./inc.layouts.reviewCard', ['review_type' => 'professor'])
+@extends('./inc.review.reviewCard', ['review_type' => 'professor'])
 
 @section('review-content')
 <p class="card-text">Difficulty: <span>{{ $review->difficulty_rating}}</span></p>

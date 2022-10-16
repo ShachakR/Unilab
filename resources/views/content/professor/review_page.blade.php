@@ -1,6 +1,7 @@
 @extends('layouts.main')
-
+<script src="{{ URL::asset('/js/review/reviewCard.js') }}"></script>
 @section('content')
+    @include('inc.review.report')
     <div class="card">
         <div class="d-flex lead justify-content-center mb-3 mt-3">
             <h4>{{ $professor->name }}</h4>
@@ -46,7 +47,6 @@
     var user = @isset($user) @json($user) @else null @endif;
     var user_review = @isset($user_review) @json($user_review)  @else null @endif;
 </script>
-<script src="{{ URL::asset('/js/review/likesHandler.js') }}"></script>
 <script src="{{ URL::asset('/js/review/review_page.js') }}"></script>
 <script src="{{ URL::asset('/js/professor/professor.js') }}"></script>
 @endsection

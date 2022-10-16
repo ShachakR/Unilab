@@ -27,13 +27,12 @@
     margin: 10px;
     display: flex;
     flex-direction: row;
-    font-size: 16px;
+    margin-bottom: 0;
 }
 
 .review-actions > a{
     color: #0d6efd;
     margin-left: 10px;
-    margin-right: 10px;
     padding-bottom: 0;
 }
 
@@ -52,6 +51,10 @@
     padding-right: 3px;
 }
 
+.review-date{
+    font-size: 18px;
+}
+
 .cardBtnEffect > i{
     transition: .4s;
     padding: 6px;
@@ -59,7 +62,7 @@
     font-size: 19px;
 }
 .cardBtnEffect > span{
-    font-size: 18px !important;
+    font-size: 15px !important;
     transition: .4s;
 }
 
