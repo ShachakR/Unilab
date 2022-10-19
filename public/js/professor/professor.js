@@ -3,14 +3,12 @@ $(function () {
 
     //Review modal 
     // Get elements 
-    var professor_rating_display = $('#professor-rating-display');
-    var professor_rating_range = $('#professor-rating-range');
 
-    var difficulty_rating_display = $('#difficulty-rating-display');
-    var difficulty_rating_range = $('#difficulty-rating-range');
+    var professor_rating = document.getElementById('professor-rating');
+    var difficulty_rating = document.getElementById('difficulty-rating');
 
-    setRangeSlider(professor_rating_range, professor_rating_display, professor_rating_range.val());
-    setRangeSlider(difficulty_rating_range, difficulty_rating_display, difficulty_rating_range.val());
+    setRatingStars('professor-rating', 0);
+    setRatingStars('difficulty-rating', 0);
 
     //modal buttons
     var add_review_btn = $('#add_review');
@@ -30,8 +28,8 @@ $(function () {
         add_review_btn.html('Edit Review');
         save_review_btn.html('Save Review');
 
-        setRangeSlider(professor_rating_range, professor_rating_display, user_review['professor_rating']);
-        setRangeSlider(difficulty_rating_range, difficulty_rating_display, user_review['difficulty_rating']);
+        setRatingStars('professor-rating', user_review['professor_rating']);
+        setRatingStars('difficulty-rating', user_review['difficulty_rating']);
 
         take_again.prop('checked', user_review['take_again']);
         $('#course_search_field').val(user_review['related_course_code']);
@@ -90,8 +88,8 @@ $(function () {
         if (related_course_code == "") related_course_code = "not specified";
 
         var data = {
-            'professor_rating': professor_rating_range.val(),
-            'difficulty_rating': difficulty_rating_range.val(),
+            'professor_rating': professor_rating.getAttribute('value'),
+            'difficulty_rating': difficulty_rating.getAttribute('value'),
             'take_again': take_again,
             'description': description,
             'professor_id': professor.id,

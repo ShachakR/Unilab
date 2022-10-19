@@ -34,6 +34,10 @@
     width: 30px;
 }
 
+.star-rating-hover{
+    cursor: pointer;
+}
+
 .dist-bar-background {
     content: ' ';
     height: 20px;

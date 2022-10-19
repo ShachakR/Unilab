@@ -22,6 +22,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-       return view('home');
+        session_start();
+        if(!isset($_SESSION['selected_university'])){
+            return view('content.no_university_selected');
+        }
+        $selected_university = $_SESSION['selected_university'];
+        $university = $selected_university;
+
+       return view('home', compact('university'));
     }
 }

@@ -11,16 +11,17 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">Professor Rating: <span class="ml-1 fw-bold"
-                                style="color: #0d6efd" id="professor-rating-display"></span> </span>
-                        <input type="range" class="form-range" min="1" max="5" step="1" id="professor-rating-range">
+                    <div class="input-group mb-3 align-items-end">
+                        <span class="input-group-text">Professor Rating:</span>
+                        <div value="1" id="professor-rating" class="ms-2">
+                            @include('inc.review.star_rating')
+                        </div>
                     </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">Difficulty Rating: <span class="ml-1 fw-bold"
-                                style="color: #0d6efd" id="difficulty-rating-display"></span> </span>
-                        <input type="range" class="form-range" min="1" max="5" step="1"
-                            id="difficulty-rating-range">
+                    <div class="input-group mb-3 align-items-end">
+                        <span class="input-group-text">Difficulty Rating:</span>
+                        <div value="1" id="difficulty-rating" class="ms-2">
+                            @include('inc.review.star_rating')
+                        </div>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Would take again?</span>

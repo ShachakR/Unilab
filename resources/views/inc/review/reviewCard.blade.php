@@ -4,9 +4,7 @@
         <div class="review-card-rating">
             <div class="d-flex lead justify-content-center mb-1 mt-2">
                 <div id="stars-{{ $review->id }}">
-                    @for ($i = 1; $i <= 5; $i++)
-                        <span id="{{ $i }}" class="material-icons-outlined star-rating">star_outlined</span>
-                    @endfor
+                    @include('inc.review.star_rating')
                 </div>
             </div>
         </div>

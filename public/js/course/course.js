@@ -3,14 +3,11 @@ $(function() {
 
     //Review modal 
     // Get elements 
-    var course_rating_display = $('#course-rating-display');
-    var course_rating_range = $('#course-rating-range');
+    var course_rating = document.getElementById('course-rating');
+    var difficulty_rating = document.getElementById('difficulty-rating');
 
-    var difficulty_rating_display = $('#difficulty-rating-display');
-    var difficulty_rating_range = $('#difficulty-rating-range');
-
-    setRangeSlider(course_rating_range, course_rating_display, course_rating_range.val());
-    setRangeSlider(difficulty_rating_range, difficulty_rating_display, difficulty_rating_range.val());
+    setRatingStars('course-rating', 0);
+    setRatingStars('difficulty-rating', 0);
 
     //modal buttons
     var add_review_btn = $('#add_review');
@@ -55,8 +52,8 @@ $(function() {
         add_review_btn.html('Edit Review');
         save_review_btn.html('Save Review');
 
-        setRangeSlider(course_rating_range, course_rating_display, user_review['course_rating']);
-        setRangeSlider(difficulty_rating_range, difficulty_rating_display, user_review['difficulty_rating']);
+        setRatingStars('course-rating', user_review['course_rating']);
+        setRatingStars('difficulty-rating', user_review['difficulty_rating']);
 
         is_online.prop('checked', user_review['online']);
         grade_recived.val(user_review['grade_recived']);
@@ -97,8 +94,8 @@ $(function() {
         grade_recived = $('#grade-recived-selector option:selected').text();
 
         var data = {
-            'course_rating': course_rating_range.val(),
-            'difficulty_rating': difficulty_rating_range.val(),
+            'course_rating': course_rating.getAttribute('value'),
+            'difficulty_rating': difficulty_rating.getAttribute('value'),
             'grade_recived': grade_recived,
             'online': is_online,
             'description': description,

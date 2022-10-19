@@ -64,6 +64,34 @@ function setRangeSlider(range, display, defualtValue) {
     });
 }
 
+function setRatingStars(elmid, value){
+    let stars_div = document.getElementById(elmid);
+    let stars = stars_div.children;
+    stars_div.setAttribute('value', value);
+
+    for (var i = 0; i < stars.length; i++) {
+        let star = stars[i];
+        if (parseFloat(star.getAttribute('id')) <= value) {
+            star.innerHTML = 'star';
+        }
+
+        star.classList.add('star-rating-hover');
+
+        star.addEventListener('mouseover', function(){
+            let value = parseFloat(this.getAttribute('id'))
+            stars_div.setAttribute('value', value);
+            for (var i = 0; i < stars.length; i++) {
+                let star = stars[i];
+                if (parseFloat(star.getAttribute('id')) <= value) {
+                    star.innerHTML = 'star';
+                }else{
+                    star.innerHTML = 'star_outlined';
+                }
+            }
+        })     
+    };
+}
+
 $(function() {
     $('#add_review').on('click', function(){
         if(!user){

@@ -10,6 +10,9 @@ use App\Models\Like;
 
 class LikesController extends Controller
 {
+    private function test($test){
+        return $test;
+    }
     
     public function like(Request $data){
         
@@ -27,16 +30,7 @@ class LikesController extends Controller
             ]
         );
 
-        $review;
-
-        if($type === 'course'){
-            $review = CourseReview::where('id', $review_id)->first();
-        }else{
-            $review = ProfessorReview::where('id', $review_id)->first();
-        }
-
-        $review->likes = $review->likes + 1;
-        $review->save();
+        $this->review_like($type, $review_id, true);
     }
 
     public function unlike(Request $data){
@@ -49,15 +43,26 @@ class LikesController extends Controller
         $like->liked = boolval(false);
         $like->save();
         
-        $review;
+        $this->review_like($type, $review_id, false);
+    }
 
-        if($type === 'course'){
-            $review = CourseReview::where('id', $review_id)->first();
+    private function review_like($type, $review_id, $like){
+        $review; 
+        switch ($type){
+            case 'course': 
+                $review = CourseReview::where('id', $review_id)->first(); 
+                break;
+            case 'professor': 
+                $review = ProfessorReview::where('id', $review_id)->first(); 
+                break;
+        }
+
+        if($like){
+            $review->likes = $review->likes + 1;
         }else{
-            $review = ProfessorReview::where('id', $review_id)->first();
+            $review->likes = $review->likes - 1;
         }
         
-        $review->likes = $review->likes - 1;
         $review->save();
     }
 }

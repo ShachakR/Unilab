@@ -8,9 +8,7 @@
         </div>
         <div class="d-flex lead justify-content-center mb-1 mt-2">
             <div id="stars">
-                @for ($i = 1; $i <= 5; $i++)
-                    <span id={{ $i }} class="material-icons-outlined star-rating">star_outlined</span>
-                @endfor
+                @include('inc.review.star_rating')
             </div>
             <h5 id="average_rating" class="ml-4"> {{ $course->rating }} / 5</h5>
         </div>
